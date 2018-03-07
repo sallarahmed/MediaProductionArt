@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity
 
     String services[]={"Select Service","Website Designing","Graphic Designing","Website Development","Online Marketing(SEO)",
             "Social Media Marketing","Print Media and Branding","Mobile app Development","Domain and Web Hosting"};
+
     Fragment f[] = {new HomeFragment(),new WebDesigningFragment(),new GraphicDesigningFragment(),new WebDevelopmentFragment(),
             new OnlineMarketingFragment(),new SocialMediaFragment(), new PrintMediaFragment(),new MobileAppFragment(),new DomainAndWebFragment()};
 
