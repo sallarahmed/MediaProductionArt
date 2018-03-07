@@ -19,15 +19,27 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.mediaproductionart.mediaproductionart.services.DomainAndWebFragment;
+import com.mediaproductionart.mediaproductionart.services.GraphicDesigningFragment;
+import com.mediaproductionart.mediaproductionart.services.MobileAppFragment;
+import com.mediaproductionart.mediaproductionart.services.OnlineMarketingFragment;
+import com.mediaproductionart.mediaproductionart.services.PrintMediaFragment;
+import com.mediaproductionart.mediaproductionart.services.SocialMediaFragment;
+import com.mediaproductionart.mediaproductionart.services.WebDesigningFragment;
+import com.mediaproductionart.mediaproductionart.services.WebDevelopmentFragment;
+
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener ,HomeFragment.OnFragmentInteractionListener {
+        implements NavigationView.OnNavigationItemSelectedListener ,HomeFragment.OnFragmentInteractionListener,WebDesigningFragment.OnFragmentInteractionListener
+,DomainAndWebFragment.OnFragmentInteractionListener,GraphicDesigningFragment.OnFragmentInteractionListener,MobileAppFragment.OnFragmentInteractionListener,
+        OnlineMarketingFragment.OnFragmentInteractionListener,PrintMediaFragment.OnFragmentInteractionListener,SocialMediaFragment.OnFragmentInteractionListener
+,WebDevelopmentFragment.OnFragmentInteractionListener {
 
     String services[]={"Select Service","Website Designing","Graphic Designing","Website Development","Online Marketing(SEO)",
             "Social Media Marketing","Print Media and Branding","Mobile app Development","Domain and Web Hosting"};
-    Fragment f[] = {new HomeFragment()};
+    Fragment f[] = {new HomeFragment(),new WebDesigningFragment(),new GraphicDesigningFragment(),new WebDevelopmentFragment(),
+            new OnlineMarketingFragment(),new SocialMediaFragment(), new PrintMediaFragment(),new MobileAppFragment(),new DomainAndWebFragment()};
 
-    /*Fragment f[]={"Select Service","Website Designing","Graphic Designing","Website Development","Online Marketing(SEO)",
-            "Social Media Marketing","Print Media and Branding","Mobile app Development","Domain and Web Hosting"};*/
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
