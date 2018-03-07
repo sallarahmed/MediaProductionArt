@@ -32,13 +32,16 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener ,HomeFragment.OnFragmentInteractionListener,WebDesigningFragment.OnFragmentInteractionListener
 ,DomainAndWebFragment.OnFragmentInteractionListener,GraphicDesigningFragment.OnFragmentInteractionListener,MobileAppFragment.OnFragmentInteractionListener,
         OnlineMarketingFragment.OnFragmentInteractionListener,PrintMediaFragment.OnFragmentInteractionListener,SocialMediaFragment.OnFragmentInteractionListener
-,WebDevelopmentFragment.OnFragmentInteractionListener {
+,WebDevelopmentFragment.OnFragmentInteractionListener ,AboutUsFragment.OnFragmentInteractionListener ,BlogFragment.OnFragmentInteractionListener
+,ContUsFragment.OnFragmentInteractionListener,EducationFragment.OnFragmentInteractionListener,PackagesFragment.OnFragmentInteractionListener,
+        CarrierFragment.OnFragmentInteractionListener,PortfolioFragment.OnFragmentInteractionListener {
 
     String services[]={"Select Service","Website Designing","Graphic Designing","Website Development","Online Marketing(SEO)",
             "Social Media Marketing","Print Media and Branding","Mobile app Development","Domain and Web Hosting"};
 
     Fragment f[] = {new HomeFragment(),new WebDesigningFragment(),new GraphicDesigningFragment(),new WebDevelopmentFragment(),
-            new OnlineMarketingFragment(),new SocialMediaFragment(), new PrintMediaFragment(),new MobileAppFragment(),new DomainAndWebFragment()};
+            new OnlineMarketingFragment(),new SocialMediaFragment(), new PrintMediaFragment(),new MobileAppFragment(),new DomainAndWebFragment(),
+    new PortfolioFragment(),new CarrierFragment(),new CarrierFragment(),new PackagesFragment(),new AboutUsFragment(),new ContUsFragment()};
 
 
     @Override
@@ -93,7 +96,7 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
@@ -127,13 +130,49 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
-        int id = item.getItemId();
+       // int id = item.getItemId();
+        switch (item.getItemId()){
 
-        if (id == R.id.nav_camera) {
+            case R.id.nav_home:
+                getSupportFragmentManager().beginTransaction().
+                        replace(R.id.content_main, f[0]).commit();
+                break;
+            case R.id.nav_portfolio:
+                getSupportFragmentManager().beginTransaction().
+                        replace(R.id.content_main, f[9]).commit();
+                break;
+            case R.id.nav_carrier:
+                getSupportFragmentManager().beginTransaction().
+                        replace(R.id.content_main, f[10]).commit();
+                break;
+            case R.id.nav_education:
+                getSupportFragmentManager().beginTransaction().
+                        replace(R.id.content_main, f[11]).commit();
+                break;
+            case R.id.nav_packages:
+                getSupportFragmentManager().beginTransaction().
+                        replace(R.id.content_main, f[12]).commit();
+                break;
+            case R.id.nav_about_us:
+                getSupportFragmentManager().beginTransaction().
+                        replace(R.id.content_main, f[13]).commit();
+                break;
+            case R.id.nav_cont_us:
+                getSupportFragmentManager().beginTransaction().
+                        replace(R.id.content_main, f[14]).commit();
+                break;
+
+
+
+        }
+
+
+
+      /*  if (id == R.id.nav_home) {
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        } else if (id == R.id.nav_portfolio) {
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_education) {
 
         } else if (id == R.id.nav_manage) {
 
@@ -141,7 +180,7 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_send) {
 
-        }
+        }*/
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
