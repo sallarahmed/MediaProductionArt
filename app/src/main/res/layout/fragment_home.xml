@@ -4,10 +4,42 @@
     android:layout_height="match_parent"
     tools:context="com.mediaproductionart.mediaproductionart.HomeFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="10dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/margin_3"
+                android:layout_marginBottom="@dimen/margin_3">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Welcome to Media Production Art"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/text_head_1"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textSize="@dimen/simple_text"
+                android:text="Media Production Art is the largest online organization in the world was established in the November of 2012 in Pakistan to give you Creative Web Design, Web Development, and Web Marketing Services from static presentation websites to difficult database driven with CMS, e-commerce websites. For those who want to grow up business in the current market advantage and make the name of their production. We also provide Graphics Designing to client."/>
+
+
+
+        </LinearLayout>
+    </ScrollView>
 </FrameLayout>
