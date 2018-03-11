@@ -11,16 +11,24 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_margin="10dp">
+            android:layout_margin="10dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:src="@drawable/home_img"
+                android:background="@drawable/roundcorners"/>
+
+
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:orientation="horizontal"
+                android:layout_marginBottom="@dimen/margin_3"
                 android:layout_marginTop="@dimen/margin_3"
-                android:layout_marginBottom="@dimen/margin_3">
+                android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -34,11 +42,165 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="Media Production Art is the largest online organization in the world was established in the November of 2012 in Pakistan to give you Creative Web Design, Web Development, and Web Marketing Services from static presentation websites to difficult database driven with CMS, e-commerce websites. For those who want to grow up business in the current market advantage and make the name of their production. We also provide Graphics Designing to client."
                 android:textAlignment="center"
+                android:textSize="@dimen/simple_text" />
+
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Our Services"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/text_head_1"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_3"
+                android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Website Designing"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"
+                android:textSize="@dimen/text_head_2"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Our website design, development is inspiring and novel....."
                 android:textSize="@dimen/simple_text"
-                android:text="Media Production Art is the largest online organization in the world was established in the November of 2012 in Pakistan to give you Creative Web Design, Web Development, and Web Marketing Services from static presentation websites to difficult database driven with CMS, e-commerce websites. For those who want to grow up business in the current market advantage and make the name of their production. We also provide Graphics Designing to client."/>
+                />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Website Development"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/text_head_2"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Everyone knows a good and spotless web is a happy web design company along with..."
+                    android:textSize="@dimen/simple_text"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Graphic Designing"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/text_head_2"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="If you are thinking about the online market then thing no more...."
+                    android:textSize="@dimen/simple_text"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Online Marketing(S.E.O)"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/text_head_2"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="S.E.O is required technique and a new way of thinking..."
+                    android:textSize="@dimen/simple_text"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Social Media Marketing"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/text_head_2"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Every online market requires high-speed traffic..."
+                    android:textSize="@dimen/simple_text"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Print Media and Branding"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/text_head_2"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="MPA is presenting great services of Print Media and Branding..."
+                    android:textSize="@dimen/simple_text"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mobile App Development"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/text_head_2"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="App development has required a team of highly skilled and professional developers..."
+                    android:textSize="@dimen/simple_text"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Domain and Web Hosting"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/text_head_2"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="The premier registrar of domain names, providing and..."
+                    android:textSize="@dimen/simple_text"
+                    />
 
 
+
+            </LinearLayout>
 
         </LinearLayout>
     </ScrollView>
