@@ -4,10 +4,88 @@
     android:layout_height="match_parent"
     tools:context="com.mediaproductionart.mediaproductionart.services.SocialMediaFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="@dimen/margin_4">
+
+
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:background="@drawable/roundcorners"
+                android:src="@drawable/smm" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/margin_2"
+                android:layout_marginTop="@dimen/margin_2">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Social Media Marketing"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/text_head_1"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_3"
+                android:textSize="@dimen/simple_text"
+                android:text="Social media marketing is the technique of quick change or mindfulness through social media scale. Social media itself is a gather all term for that may offer commonly different social activities. For instance, Twitter is a social site wanted to let individuals impart short post to other individuals. Face book, conversely, is a complete social systems management site that let for imparting redesigns, photo, joining occasions and a choice of different exercises. "/>
+
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_3"
+                android:textSize="@dimen/simple_text"
+                android:text="Media Production Art is a particularly full administration generally social media showcasing an organization that actually focuses on information-driven genuine for all intents social encounters in an actual major way. A start in this field, we’re a small, centered squad that for all purposes has based a status on work that slices through the confusion and produces consequences. We chip away at a genuine sort of quicker note."
+                />
+
+
+
+
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/simple_text"
+                android:text="We're talented in particular social media showcase and we're honestly more for all intents and purposes to give in a pretty big way. Our conventions is very rare and powerful popular belief. Fervor drives the definitely entire thing. Precision guarantees finishing, which is fairly significant. Yes, it’s troublesome and it’s not particularly loose yet it’s the expense of incredible work in a basically big way. Our custom social strategy essentially is to specifically achieve the best profit for the resource."
+                />
+
+
+
+
+
+
+
+
+
+
+            <include layout="@layout/btn_view_pkgs" />
+            <include layout="@layout/footer" />
+
+        </LinearLayout>
+    </ScrollView>
+
 
 </FrameLayout>

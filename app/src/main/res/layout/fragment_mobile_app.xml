@@ -4,10 +4,134 @@
     android:layout_height="match_parent"
     tools:context="com.mediaproductionart.mediaproductionart.services.MobileAppFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="@dimen/margin_4">
+
+
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:background="@drawable/roundcorners"
+                android:src="@drawable/mobile_app" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/margin_2"
+                android:layout_marginTop="@dimen/margin_2">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Mobile App Development"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/text_head_1"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/simple_text"
+                android:text="Media Production Art has a group of master very skillful application engineers whose creative thought is to boost our utilization of the iPhone or other to make fashionable, captivating, and easy to pick up the app that places out from the reach and pushes fringes where incredible attractive that everybody want within you. We right now create applications for too vast associations furthermore attend a percentage of the main advanced offices in the overall who make out their handy applications progression to our in-house boards"/>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/margin_2"
+                android:layout_marginTop="@dimen/margin_2">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="WEB APP DEVELOPMENT"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/text_head_1"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/simple_text"
+                android:text="Web App Development is open anyplace it adjusts moderate, the automatic configuration with peculiarity rich usefulness. To accomplish this troublesome offset we consume the time to painstakingly know your business, customers, gimmicks, usefulness, and targets for the Web App Development. We change over your necessities into an outline that is standard and welcoming to clients that additionally offers the gimmicks and usefulness they wish."/>
+
+
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/margin_2"
+                android:layout_marginTop="@dimen/margin_2">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="IPHONE APPS"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/text_head_1"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/simple_text"
+                android:text="As everyone knows iPhone is a standout the most influential gadgets accessible to us luckily we are able to create high streamlined and suitable applications and diversions for your iPhone, with the highly specialized talent to give the greatest usefulness to the gadget while satisfying your needs in a skillful way with alluring looks."/>
+
+
+
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/margin_2"
+                android:layout_marginTop="@dimen/margin_2">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="ANDROID APPS"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/text_head_1"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/simple_text"
+                android:text="The Android applications platform is tractable open source application advancement organize that offers methods for business to dispatch valuable and new portable applications. Our methodology has been planned and demonstrated to create the best brings about the most limited measure of time in android applications."/>
+
+
+
+
+            <include layout="@layout/btn_view_pkgs" />
+            <include layout="@layout/footer" />
+
+        </LinearLayout>
+    </ScrollView>
+
 
 </FrameLayout>

@@ -3,11 +3,134 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.mediaproductionart.mediaproductionart.services.GraphicDesigningFragment">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="@dimen/margin_4">
+
+
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:background="@drawable/roundcorners"
+                android:src="@drawable/graphics" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/margin_2"
+                android:layout_marginTop="@dimen/margin_2">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Graphic Designing"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/text_head_1"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/simple_text"
+                android:text="Media Production Art has rare plans for your problem Scrutinize numbers of Graphic Designers to find the best of the best in terms of design Research has shown that we understand more information in images 50 times faster than text. Our Graphic Designers are looking for exceptional design as well as functionality, site outline and we are here to create for a marketing warfare that develops web animation as the main service any difficulties can identify with graphics outlining they can support you from any issues. Media Production Art is a full power and graphics plan and counseling firm concentrates in beginning marking problems for little and huge companies, in light of the reality that we set our interests into practice to make cutting-edge sites and graphic outline with full online web broadcasting plans."/>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/margin_2"
+                android:layout_marginTop="@dimen/margin_2">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="THE CORPORATE BRANDING"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/text_head_1"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/simple_text"
+                android:text="Media Production Art helps you in making your corporate and part in a common interest. Corporate Branding is separating to a business in today's overall business. With so much action, but then turns the tables and professionals you by matching your review corporate marking allows a key part in situating your business for long distance victory. At the point when customers want and desire your brand, they are actually more inclined to stay loyal to your business. We get a suitable link between your online and logged off business in a new pathway."                />
+
+
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/margin_2"
+                android:layout_marginTop="@dimen/margin_2">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="THE BROCHURES"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/text_head_1"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/simple_text"
+                android:text="A Flyer is the straightforward method to broadcast your corporation items. A nicely very well taken into thought leaflet and flyer can be an independent selling to polarize new consumers. On the risk that you require, pamphlets, flyer or print a business card, let the Media production art make an eye fixed-getting plan to be able to get you noticed. We provide committed progressive define and printing management for specific sorts of activities for both little and great. let our done organization make you an altered graphic plan or printing."/>
+
+
+
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/margin_2"
+                android:layout_marginTop="@dimen/margin_2">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="THE LOGOS"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/text_head_1"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/simple_text"
+                android:text="Having a kind of solid business character is essential to staying fairly cool in the personalities of your customers in a generally big way. Where a skillfully designer can send a reasonable note of value and validity, you can count on your commodity to be highly viewed. Our design experts from wireframe to designs to interactive ideas to ensure brilliant product design one can specifically leave potential clients with questions in a subtle way. That actually is the reason we consider unique plan is so important in Media Production Art, which generally is fairly significant. We essentially manufacture the worlds very much the best logos for your site with them for all intents goal that it may kind of mushroom high."/>
+
+
+
+
+            <include layout="@layout/btn_view_pkgs" />
+            <include layout="@layout/footer" />
+
+        </LinearLayout>
+    </ScrollView>
+
 
 </FrameLayout>

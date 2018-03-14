@@ -4,10 +4,203 @@
     android:layout_height="match_parent"
     tools:context="com.mediaproductionart.mediaproductionart.services.DomainAndWebFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="@dimen/margin_4">
+
+
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:background="@drawable/roundcorners"
+                android:src="@drawable/domain" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/margin_2"
+                android:layout_marginTop="@dimen/margin_2">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Domain and Web Hosting"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/text_head_1"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/simple_text"
+                android:text="Media Production Art is the head enrollment center of area names, giving and areas and also offers a solitary point interface to deal with all your spaces safely and successfully. We offer a full set of area administrations and give you permitted Control Panel, Registrant Modification, Domain Locking, Privacy Protection, and free Domain Parking. You can check the accessibility of your spaces from this site and request your areas on the web. We give different secure online and disconnected from the net installment alternatives with adaptability to pay in different monetary forms."/>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/margin_2"
+                android:layout_marginTop="@dimen/margin_2">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="WEB HOSTING"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/text_head_1"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/simple_text"
+                android:text="Media Production Art web hosting administrations complete a 100% uptime ensure, a sharp IP address and keep up with a brilliant call focus. We give you sensible web hosting arrangements designed to support and little organizations take help of their web region."/>
+
+
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/margin_2"
+                android:layout_marginTop="@dimen/margin_2">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="NETWORKING"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/text_head_1"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/simple_text"
+                android:text="We have an ultra-quick, perpetually versatile system to meet the future requests of the new economy. We use a few messenger grade Data Centers and top fittings parts that guarantee dependable administrations and rich data transmission for all clients. To stay informed of the developing interest, we are always growing our imparted hosting foundation."/>
+
+
+
+
+            <TextView
+                android:id="@+id/type1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="3sp"
+                android:text="• Fiber optic backbone with public and private peering"
+                android:textSize="@dimen/simple_text"
+                android:layout_below="@+id/body_text3"
+                android:layout_marginLeft="25dp" />
+
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="3sp"
+                android:text="• 24 x 7 business operations; with real-time monitoring."
+                android:textSize="@dimen/simple_text"
+                android:layout_below="@+id/type1"
+                android:layout_marginLeft="25dp" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="3sp"
+                android:text="• Web server load balancing and web garden technology."
+                android:textSize="@dimen/simple_text"
+                android:layout_below="@+id/type1"
+                android:layout_marginLeft="25dp" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="3sp"
+                android:text="• Daily Systems File and Database Backups."
+                android:textSize="@dimen/simple_text"
+                android:layout_below="@+id/type1"
+                android:layout_marginLeft="25dp" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="3sp"
+                android:text="• Microsoft Windows 2003 Server and Cent OS Linux based Platforms."
+                android:textSize="@dimen/simple_text"
+                android:layout_below="@+id/type1"
+                android:layout_marginLeft="25dp" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="3sp"
+                android:text="• Helm multiple Windows server management and control system."
+                android:textSize="@dimen/simple_text"
+                android:layout_below="@+id/type1"
+                android:layout_marginLeft="25dp" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="3sp"
+                android:text="• Linux cPanel and WHM."
+                android:textSize="@dimen/simple_text"
+                android:layout_below="@+id/type1"
+                android:layout_marginLeft="25dp" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="3sp"
+                android:text="• Web Services: FrontPage Office 2003, ASP.NET, PHP, Perl and ColdFusion."
+                android:textSize="@dimen/simple_text"
+                android:layout_below="@+id/type1"
+                android:layout_marginLeft="25dp" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="3sp"
+                android:text="• Database Support: MS SQL Server, MySQL Server, MS Access and Excel."
+                android:textSize="@dimen/simple_text"
+                android:layout_below="@+id/type1"
+                android:layout_marginLeft="25dp" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="3sp"
+                android:text="• UPS battery backup and backup diesel generators."
+                android:textSize="@dimen/simple_text"
+                android:layout_below="@+id/type1"
+                android:layout_marginLeft="25dp" />
+
+
+
+
+
+
+            <include layout="@layout/btn_view_pkgs" />
+            <include layout="@layout/footer" />
+
+        </LinearLayout>
+    </ScrollView>
 
 </FrameLayout>

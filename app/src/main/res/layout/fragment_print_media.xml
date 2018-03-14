@@ -4,10 +4,88 @@
     android:layout_height="match_parent"
     tools:context="com.mediaproductionart.mediaproductionart.services.PrintMediaFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="@dimen/margin_4">
+
+
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:background="@drawable/roundcorners"
+                android:src="@drawable/pmb" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/margin_2"
+                android:layout_marginTop="@dimen/margin_2">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Branding and Print Media"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/text_head_1"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_3"
+                android:textSize="@dimen/simple_text"
+                android:text="Media Production Art is tremendous organizational in the world introducing extraordinary management of Print Media and Branding. Whether need a full advertising and self-crusade for a creative business on the off chance that you are living by to take a current trade to the given level, Relative Print Media and Branding is certain to convey results. We are prepared and strengthened to support your development and keep in your trade with spotless and world-class innovativeness. Our Web Services, Branding, Print Design Services and Identity Services are the best administrations ever"/>
+
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_3"
+                android:textSize="@dimen/simple_text"
+                android:text="Overall Site Plans, marking for surrounding arrangement, concentrates in trade marking for little and large form organizations. We concentrate in outlining winning sites; however, our will is sure about whether your site or Print Media and Branding and substance administrations make for the living for your organization."
+                />
+
+
+
+
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/simple_text"
+                android:text="Media Production Art administrations do simply that. In adding to a squad of web architects, qualified machine developers, and also specialized masters, we are clear with our rank in business."
+                />
+
+
+
+
+
+
+
+
+
+
+            <include layout="@layout/btn_view_pkgs" />
+            <include layout="@layout/footer" />
+
+        </LinearLayout>
+    </ScrollView>
+
 
 </FrameLayout>

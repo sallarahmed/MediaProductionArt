@@ -4,10 +4,107 @@
     android:layout_height="match_parent"
     tools:context="com.mediaproductionart.mediaproductionart.services.WebDesigningFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="abc" />
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="@dimen/margin_4">
+
+
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:background="@drawable/roundcorners"
+                android:src="@drawable/web" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/margin_2"
+                android:layout_marginTop="@dimen/margin_2">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Website Designing"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/text_head_1"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/simple_text"
+                android:text="Our site structure, development, layout and change advancement offices are focused on developing the possibilities if the guest arrives on your site will play trump card move, in the same way as making a buy, download a record, or fill-out a web composition. We are persisting web organization, which implies we consider client programs through and through. Media Production Art is the excellent understanding in Html5, Css3 and Retina Ready Designs suitable for any site or business. It is constructed to be neat with rich top configuration page essentials. The design is too good you will amaze. We can offer our clients with answers for all their site necessities."/>
+
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/margin_2"
+                android:layout_marginTop="@dimen/margin_2">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Best RESPONSIVE DESIGNS"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/text_head_1"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/simple_text"
+                android:text="Sensitive Designs term is identified with the idea of creating a plan in a manner that clears the design to find perfect as designated by the client's PC security movement. We please ourselves in being the master in Flat, Lightweight and Responsive Designs. We attempt hard to guarantee our entire staff is a la mode on all the advanced users of Flat, Lightweight and Conscious Designs."
+                />
+
+
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/margin_2"
+                android:layout_marginTop="@dimen/margin_2">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="THE CORPORATE DESIGNS AND E-COMMERCE"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/text_head_1"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/simple_text"
+                android:text="Our web plans will generally convey a custom site that efforts for you, your Customers and your online works by adjusting it to particularly discover of web showcasing in a major way. Look at our provided E-Commerce Corporate Designs and see a fairly minor picture of what we can for all accomplish for you and really your site, especially contrary to popular belief. E-commerce web configuration is our heading offices, giving trade for all intents and purposes national a modified online picture, online business, and shopping truck work in a generally big way." />
+
+
+            <include layout="@layout/btn_view_pkgs" />
+            <include layout="@layout/footer" />
+
+        </LinearLayout>
+    </ScrollView>
+
 
 </FrameLayout>

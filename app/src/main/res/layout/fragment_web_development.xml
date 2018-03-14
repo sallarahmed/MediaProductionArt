@@ -4,10 +4,109 @@
     android:layout_height="match_parent"
     tools:context="com.mediaproductionart.mediaproductionart.services.WebDevelopmentFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="@dimen/margin_4">
+
+
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:background="@drawable/roundcorners"
+                android:src="@drawable/web" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/margin_2"
+                android:layout_marginTop="@dimen/margin_2">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Website Development"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/text_head_1"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/simple_text"
+                android:text="Media Production Art, being a definitely well-known web development organization in Pakistan performs a web form and development task, our group considers the representation structure and organization of each venture of the method made cutting-edge clarifications, completely out of the box thinking, for our valued clients. We won't end working until you have the site you seek. Having a phenomenal site implies more than having one that looks great. The experience your guests and prospective customers have with your business truly relies on upon their ability with your site. The course of action of the site's route, content and illustrations all essentially add to this experience in a, particularly big way. We can offer an end-to-end pretty Complex for all intents and purposes Dynamic definitely Portal empowering administrations with imaginative web plan style, consolidated with data of the most current innovations, which is fairly significant. Our procedure has been composed and demonstrated to essentially deliver the absolute best brings about the briefest measure of time in a subtle way. This assistance to development deals execution definitely builds customer fulfillment and kind of make showcasing activities generally overall composed, which literally is quite significant."/>
+
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/margin_2"
+                android:layout_marginTop="@dimen/margin_2">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="CONTENT ADMINISTRATION FRAMEWORK"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/text_head_1"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/simple_text"
+                android:text="Media Production Art can alter your site by letting for more tricks with prospect innovations. Our content control structure supports the client to improve a site even without attention to web dialects and HTML. We give a board where the client can pick a task to be carried out. In the event that you might want to alter the substance of any page on your site, our Content Management System will show a window where clients can alter the web substance and clients can likewise see the progressions they arranged. We offer an expansive scope of qualified administrations that incorporate web outlines, Word press or Joomla, development, and significantly more."
+                />
+
+
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/margin_2"
+                android:layout_marginTop="@dimen/margin_2">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="SOCIAL NETWORKING ELUCIDATION"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/text_head_1"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/simple_text"
+                android:text="Our top quality of Social Networking Solutions of your every problem recognizes patterns your online networking promoting fights. We are the best web development organization in Pakistan; we understand the wellspring of the kind of social suppositions to show signs of improvement influencer outreach, so social quality web development organization in Pakistan, We social suppositions to show signs of improvement influencer outreach, basically contrary to popular belief."
+                />
+
+
+
+            <include layout="@layout/btn_view_pkgs" />
+            <include layout="@layout/footer" />
+
+        </LinearLayout>
+    </ScrollView>
+
 
 </FrameLayout>

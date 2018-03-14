@@ -4,10 +4,106 @@
     android:layout_height="match_parent"
     tools:context="com.mediaproductionart.mediaproductionart.services.OnlineMarketingFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="@dimen/margin_4">
+
+
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:background="@drawable/roundcorners"
+                android:src="@drawable/seo" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/margin_2"
+                android:layout_marginTop="@dimen/margin_2">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Online Marketing"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/text_head_1"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_3"
+                android:textSize="@dimen/simple_text"
+                android:text="Internet Marketing (SEO) entwines innovative and specialized rudiments of the web like, web outline, web development, promoting and deals. Web promoting additionally alludes to the position of media along numerous unique phases of the guest's gathering go through web showcasing (SEO) and internet searcher advertising (SEM), and some different components. "/>
+
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_3"
+                android:textSize="@dimen/simple_text"
+                android:text="Our online advertiser and SEO masters offer a full scope of internet promoting (SEO) Services to aid you in accomplishing more deceivability inside the principle SEO and increase more web contact for your target viewers. We support huge business, and individual site managers with our web showcasing (SEO) Services, helping you help your site movement naturally and absolutely. "
+                />
+
+
+
+
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_3"
+                android:textSize="@dimen/simple_text"
+                android:text="Media Production Art is a Principled Search Engine Optimization Company Specializing in Search Engine Marketing and Search Engine Ranking Services. Our accomplished SEO masters are well acquainted with most recent SEO methods and give a complete suite of SEO promoting administrations intended to meet your business needs."
+                />
+
+
+
+
+
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_3"
+                android:textSize="@dimen/simple_text"
+                android:text="The methodology of enhancing a webpage and its substance very significant for both web crawlers and web surfers and help a website increase top positioning for pertinent words and pivotal word states in web crawler. Website improvement is a standout amongst the best and savvy type of online e-showcasing instrument."/>
+
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/simple_text"
+                android:text="you have settled on the right decision in teaching yourself on web crawler arrangement. Regardless of the possibility that you decide to outsource your SEO fight to experts, it is dependably a decent thought to recognize what's in store and how to consider your administration suppliers responsible. "
+                />
+
+
+
+            <include layout="@layout/btn_view_pkgs" />
+            <include layout="@layout/footer" />
+
+        </LinearLayout>
+    </ScrollView>
+
 
 </FrameLayout>
