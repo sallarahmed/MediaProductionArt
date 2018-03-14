@@ -12,18 +12,797 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_3"
             android:orientation="vertical">
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="170dp"
-                android:src="@drawable/portfolio"
-                android:background="@drawable/roundcorners"/>
+                android:background="@drawable/roundcorners"
+                android:src="@drawable/portfolio" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/margin_2"
+                android:layout_marginTop="@dimen/margin_2">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Some of Our Recent Work"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/text_head_1"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Websites"
+                android:textSize="@dimen/text_head_2"
+                android:textStyle="bold" />
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_4"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/web_portfolio_1"
+                        android:layout_width="70dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/thumbnail_web_portfolio" />
+
+                    <TextView
+                        android:id="@+id/web_portfolio_text_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Visit site"
+                        android:textColor="@color/colorPrimary"
+                        android:textStyle="italic" />
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_4"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/web_portfolio_2"
+                        android:layout_width="70dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/thumbnail_web_portfolio_2" />
+
+                    <TextView
+                        android:id="@+id/web_portfolio_text_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Visit site"
+                        android:textColor="@color/colorPrimary"
+                        android:textStyle="italic" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_4"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/web_portfolio_3"
+                        android:layout_width="70dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/thumbnail_web_portfolio_3" />
+
+                    <TextView
+                        android:id="@+id/web_portfolio_text_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Visit site"
+                        android:textColor="@color/colorPrimary"
+                        android:textStyle="italic" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_4"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/web_portfolio_4"
+                        android:layout_width="70dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/thumbnail_web_portfolio_4" />
+
+                    <TextView
+                        android:id="@+id/web_portfolio_text_4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Visit site"
+                        android:textColor="@color/colorPrimary"
+                        android:textStyle="italic" />
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
 
 
 
 
-            <include layout="@layout/footer"/>
+            <include layout="@layout/btn_view_more" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Logos"
+                android:textSize="@dimen/text_head_2"
+                android:textStyle="bold" />
+
+
+
+
+
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/margin_3"
+                android:layout_marginBottom="@dimen/margin_3">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_4"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/logo_portfolio_1"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:src="@drawable/thumbnail_logo_portfolio_1"
+                        />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_4"
+                    android:orientation="vertical">
+
+
+                    <ImageView
+                        android:id="@+id/logo_portfolio_2"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:src="@drawable/thumbnail_logo_portfolio_2"
+                        android:layout_marginBottom="@dimen/margin_4"/>
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_4"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/logo_portfolio_3"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:src="@drawable/thumbnail_logo_portfolio_3"
+                        android:layout_marginBottom="@dimen/margin_4"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_4"
+                    android:orientation="vertical">
+
+
+                    <ImageView
+                        android:id="@+id/logo_portfolio_4"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:src="@drawable/thumbnail_logo_portfolio_4"
+                        android:layout_marginBottom="@dimen/margin_4"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <include layout="@layout/btn_view_more" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Animated Logos"
+                android:textSize="@dimen/text_head_2"
+                android:textStyle="bold" />
+
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/margin_3"
+                android:layout_marginBottom="@dimen/margin_3">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_4"
+                    android:orientation="vertical">
+
+                    <pl.droidsonroids.gif.GifImageView
+                        android:id="@+id/a_logo_portfolio_1"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:src="@drawable/a_logo_portfolio"
+                        />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_4"
+                    android:orientation="vertical">
+
+
+                    <pl.droidsonroids.gif.GifImageView
+                        android:id="@+id/a_logo_portfolio_2"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:src="@drawable/a_logo_portfolio_2"
+                        />
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_4"
+                    android:orientation="vertical">
+
+                    <pl.droidsonroids.gif.GifImageView
+                        android:id="@+id/a_logo_portfolio_3"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:src="@drawable/a_logo_portfolio_3"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_4"
+                    android:orientation="vertical">
+
+
+                    <pl.droidsonroids.gif.GifImageView
+                        android:id="@+id/a_logo_portfolio_4"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:src="@drawable/a_logo_portfolio_4"
+                        />
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+
+            <Button
+                android:id="@+id/btn_more_a_logo_portfolio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/roundcorners_2"
+                android:text="view more"
+                android:textColor="@color/colorText"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="@dimen/margin_4"
+                android:layout_marginTop="@dimen/margin_4"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Busness Cards"
+                android:textSize="@dimen/text_head_2"
+                android:textStyle="bold" />
+
+
+
+
+
+
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/margin_3"
+                android:layout_marginBottom="@dimen/margin_3">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_4"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/b_card_portfolio_1"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:src="@drawable/thumbnail_b_card_portfolio_1"
+                        />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_4"
+                    android:orientation="vertical">
+
+
+                    <ImageView
+                        android:id="@+id/b_card_portfolio_2"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:src="@drawable/thumbnaill_b_card_portfolio_2"
+                        android:layout_marginBottom="@dimen/margin_4"/>
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_4"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/b_card_portfolio_3"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:src="@drawable/thumbnail_b_card_portfolio_3"
+                        android:layout_marginBottom="@dimen/margin_4"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_4"
+                    android:orientation="vertical">
+
+
+                    <ImageView
+                        android:id="@+id/b_card_portfolio_4"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:src="@drawable/thumbnail_b_card_portfolio_4"
+                        android:layout_marginBottom="@dimen/margin_4"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <include layout="@layout/btn_view_more" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Post Cards"
+                android:textSize="@dimen/text_head_2"
+                android:textStyle="bold" />
+
+
+
+
+
+
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/margin_3"
+                android:layout_marginBottom="@dimen/margin_3">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_4"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/p_card_portfolio_1"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:src="@drawable/thumbnail_p_card_portfolio"
+                        />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_4"
+                    android:orientation="vertical">
+
+
+                    <ImageView
+                        android:id="@+id/p_card_portfolio_2"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:src="@drawable/thumbnail_p_card_portfolio_2"
+                        android:layout_marginBottom="@dimen/margin_4"/>
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_4"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/p_card_portfolio_3"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:src="@drawable/thumbnail_p_card_portfolio_3"
+                        android:layout_marginBottom="@dimen/margin_4"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_4"
+                    android:orientation="vertical">
+
+
+                    <ImageView
+                        android:id="@+id/p_card_portfolio_4"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:src="@drawable/thumbnail_p_card_portfolio_4"
+                        android:layout_marginBottom="@dimen/margin_4"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <include layout="@layout/btn_view_more" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Brouchures"
+                android:textSize="@dimen/text_head_2"
+                android:textStyle="bold" />
+
+
+
+
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/margin_3"
+                android:layout_marginBottom="@dimen/margin_3">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_4"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/brouchers_portfolio_1"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/thumbnail_broucher_portfolio_1"
+                        />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_4"
+                    android:orientation="vertical">
+
+
+                    <ImageView
+                        android:id="@+id/brouchers_portfolio_2"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/thumbnail_broucher_portfolio_2"
+                        android:layout_marginBottom="@dimen/margin_4"/>
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_4"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/brouchers_portfolio_3"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/thumbnail_broucher_portfolio_3"
+                        android:layout_marginBottom="@dimen/margin_4"/>
+
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+
+            <include layout="@layout/btn_view_more" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Flyers"
+                android:textSize="@dimen/text_head_2"
+                android:textStyle="bold" />
+
+
+
+
+
+
+
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/margin_3"
+                android:layout_marginBottom="@dimen/margin_3">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_4"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/flyer_portfolio_1"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:src="@drawable/thumbnail_flyer_portfolio_1"
+                        />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_4"
+                    android:orientation="vertical">
+
+
+                    <ImageView
+                        android:id="@+id/flyer_portfolio_2"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:src="@drawable/thumbnail_flyer_portfolio_2"
+                        android:layout_marginBottom="@dimen/margin_4"/>
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_4"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/flyer_portfolio_3"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:src="@drawable/thumbnail_flyer_portfolio_3"
+                        android:layout_marginBottom="@dimen/margin_4"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_4"
+                    android:orientation="vertical">
+
+
+                    <ImageView
+                        android:id="@+id/flyer_portfolio_4"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:src="@drawable/thumbnail_flyer_portfolio_4"
+                        android:layout_marginBottom="@dimen/margin_4"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+
+
+
+            <include layout="@layout/btn_view_more" />
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3-d Archicture"
+                android:textSize="@dimen/text_head_2"
+                android:textStyle="bold" />
+
+
+
+
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/margin_3"
+                android:layout_marginBottom="@dimen/margin_3">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_4"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/portfolio_3d_archicture_1"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:src="@drawable/thumbnail_portfolio_3d_1"
+                        />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_4"
+                    android:orientation="vertical">
+
+
+                    <ImageView
+                        android:id="@+id/portfolio_3d_archicture_2"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:src="@drawable/thumbnail_logo_portfolio_2"
+                        android:layout_marginBottom="@dimen/margin_4"/>
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_4"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/portfolio_3d_archicture_3"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:src="@drawable/thumbnail_portfolio_3d_3"
+                        android:layout_marginBottom="@dimen/margin_4"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_4"
+                    android:orientation="vertical">
+
+
+                    <ImageView
+                        android:id="@+id/portfolio_3d_archicture_4"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:src="@drawable/thumbnail_portfolio_3d_4"
+                        android:layout_marginBottom="@dimen/margin_4"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <include layout="@layout/btn_view_more" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <include layout="@layout/footer" />
         </LinearLayout>
     </ScrollView>
 </FrameLayout>

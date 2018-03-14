@@ -4,10 +4,199 @@
     android:layout_height="match_parent"
     tools:context="com.mediaproductionart.mediaproductionart.AboutUsFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="@dimen/margin_3">
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/margin_2"
+                android:layout_marginTop="@dimen/margin_2">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="About Us"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/text_head_1"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/simple_text"
+                android:textAlignment="center"
+                android:text="Media Production Art is one of the best and complete Graphics Designing and web development organizations in the world. It further arranges in Graphics and web designing company. The organization runs with a large number of leading experts who are work very hard day and night to earn the supreme position and change the face of greatest, many managers site. To enhance your business organization is assisting as an end of the line for every one of those online  connections and people who need to grow their business through sites markedly."/>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/margin_2"
+                android:layout_marginTop="@dimen/margin_2">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="WHAT SERVICES DO WE OFFER?"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/text_head_1"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/simple_text"
+                android:text="Media Production Art offers you it’s very rare performance of site planning and promotion. The easiest helpful and interesting inquiries would be, What services do we offer'? With a weapons store of powers to shoot your management name to the top, The services mentioned on the page will allow you to advance your brand name on the grounds that out shape and advancement contain very experienced people that won't just offer a beautiful view of a site to your customers. Furthermore, gives many other services including web marketing and social networking promoting administrations, SEO Search Engine Optimization), on the grounds that although of whereby enhanced your site, in any case, need to market it the right people. With lion's share move to compact figuring, Media Art Production plus gives handy application advancement administrations to its customers. Obviously, why bound yourself to only one spot when you can go professional platform?"/>
+
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/margin_2"
+                android:layout_marginTop="@dimen/margin_2">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="WHAT WE DO"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/text_head_1"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/simple_text"
+                android:text="The organization is ahead for its complete Graphics Designing and web development services. Our presentational show our personalities and we are focused on sending the most overwhelming quality work, support, and upkeep at the most forward appraise. We have practical experience in broadcasting and promoting business. Our procedure has been planned and demonstrated to create the best brings about the smallest measure of time."/>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/margin_2"
+                android:layout_marginTop="@dimen/margin_2">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="HOW WE DO IT"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/text_head_1"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/simple_text"
+                android:text="Our methodology has been outlined and demonstrated to create the best brings about the briefest measure of time. We cater each one undertaking to help and objectives of the customer keeping in mind the end goal to focus on their business group of onlookers. Our instruments are our personalities and we are focused on conveying the most astounding quality work, backing and support at the most aggressive evaluating."/>
+
+
+
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/margin_2"
+                android:layout_marginTop="@dimen/margin_2">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="HOW WE DO IT FOR"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/text_head_1"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/simple_text"
+                android:text="Media Production Art gloats of considerable quantities of customers fundamentally found in many towns and urban areas of USA, Canada, UK, Australia, Belgium, South Africa, UAE, and Pakistan. Our business sector part experience incorporates Finance, Marketing, Engineering, Medical, Information Technology, Hotels, Automotive, and many others."/>
+
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/margin_2"
+                android:layout_marginTop="@dimen/margin_2">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="COMMITMENT"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/text_head_1"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/simple_text"
+                android:text="We create modification methods that meet the most outstanding feature principles through which our clients succeed flawlessness and fulfillment in their business. We strive hard to meet the most astounding client fulfillment levels by giving unbelievable engineering arrangement on time. To get in touch with us, leave us an inquiry notification on info@mediaproductionart.com or support@mediaproductionart.com and we will get back to you ."/>
+
+
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/margin_2"
+                android:layout_marginTop="@dimen/margin_2">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="OUR MISSION"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/text_head_1"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Our primary importance is to guarantee client satisfaction. We serve our customers as a trusted friend, giving them the truthfulness of a good business accomplice. We trust in our representatives as we serve to our boss, bemoaned this is our top good quality. Since our organized, we have worked with the best in the business. We pride ourselves on the abilities and professionalism that how we put our effect in fabulous and put time and struggle in preparing them to further improve their abilities."/>
+
+
+            <include layout="@layout/footer" />
+
+        </LinearLayout>
+    </ScrollView>
 </FrameLayout>
