@@ -13,4 +13,18 @@
     <dimen name="margin_2">20dp</dimen>
     <dimen name="margin_3">10dp</dimen>
     <dimen name="margin_4">8dp</dimen>
+
+
+
+
+
+
+
+
+
+    <dimen name="cardCornerRadius">4dp</dimen>
+    <dimen name="cardElevation">4dp</dimen>
+    <dimen name="cardview_horizontal_padding">6dp</dimen>
+    <dimen name="cardview_vertical_padding">2dp</dimen>
+
 </resources>

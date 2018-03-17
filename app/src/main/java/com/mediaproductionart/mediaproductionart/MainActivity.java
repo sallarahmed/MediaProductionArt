@@ -16,6 +16,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -36,6 +37,15 @@ public class MainActivity extends AppCompatActivity
 ,ContUsFragment.OnFragmentInteractionListener,EducationFragment.OnFragmentInteractionListener,PackagesFragment.OnFragmentInteractionListener,
         CarrierFragment.OnFragmentInteractionListener,PortfolioFragment.OnFragmentInteractionListener {
 
+
+
+    private boolean fabExpanded = false;
+    private FloatingActionButton fabChat;
+    private LinearLayout layoutFabWhatsapp;
+    private LinearLayout layoutFabMessanger;
+  //  private LinearLayout layoutFabPhoto;
+
+
     String services[]={"Select Service","Website Designing","Graphic Designing","Website Development","Online Marketing(SEO)",
             "Social Media Marketing","Print Media and Branding","Mobile app Development","Domain and Web Hosting"};
 
@@ -51,15 +61,43 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        fabChat =  findViewById(R.id.fabChat);
 
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        layoutFabMessanger =  this.findViewById(R.id.layoutFabMessanger);
+        layoutFabWhatsapp =  this.findViewById(R.id.layoutFabWhatsApp);
+
+
+        fabChat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                if (fabExpanded == true){
+                    closeSubMenusFab();
+                } else {
+                    openSubMenusFab();
+                }
             }
         });
+
+        layoutFabWhatsapp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "WhatsApp", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        layoutFabMessanger.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "Messanger", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+
+        //Only main FAB is visible in the beginning
+        closeSubMenusFab();
+
+
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -93,6 +131,27 @@ public class MainActivity extends AppCompatActivity
 
 
     }
+
+
+    //closes FAB submenus
+    private void closeSubMenusFab(){
+        layoutFabMessanger.setVisibility(View.INVISIBLE);
+        layoutFabWhatsapp.setVisibility(View.INVISIBLE);
+     //   layoutFabPhoto.setVisibility(View.INVISIBLE);
+        fabChat.setImageResource(R.drawable.ic_chat_32);
+        fabExpanded = false;
+    }
+
+    //Opens FAB submenus
+    private void openSubMenusFab(){
+        layoutFabMessanger.setVisibility(View.VISIBLE);
+        layoutFabWhatsapp.setVisibility(View.VISIBLE);
+     //   layoutFabPhoto.setVisibility(View.VISIBLE);
+        //Change settings icon to 'X' icon
+        fabChat.setImageResource(R.drawable.ic_close_white);
+        fabExpanded = true;
+    }
+
 
     @Override
     public void onBackPressed() {
