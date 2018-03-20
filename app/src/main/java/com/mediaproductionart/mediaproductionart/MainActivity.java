@@ -1,10 +1,14 @@
 package com.mediaproductionart.mediaproductionart;
 
+import android.content.ComponentName;
+import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
+import android.telephony.PhoneNumberUtils;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -51,7 +55,7 @@ public class MainActivity extends AppCompatActivity
 
     Fragment f[] = {new HomeFragment(),new WebDesigningFragment(),new GraphicDesigningFragment(),new WebDevelopmentFragment(),
             new OnlineMarketingFragment(),new SocialMediaFragment(), new PrintMediaFragment(),new MobileAppFragment(),new DomainAndWebFragment(),
-    new PortfolioFragment(),new CarrierFragment(),new CarrierFragment(),new PackagesFragment(),new AboutUsFragment(),new ContUsFragment()};
+    new PortfolioFragment(),new CarrierFragment(),new EducationFragment(),new PackagesFragment(),new AboutUsFragment(),new ContUsFragment()};
 
 
     @Override
@@ -81,14 +85,17 @@ public class MainActivity extends AppCompatActivity
         layoutFabWhatsapp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "WhatsApp", Toast.LENGTH_SHORT).show();
+
+                openWhatsApp();
+                //Toast.makeText(MainActivity.this, "WhatsApp", Toast.LENGTH_SHORT).show();
             }
         });
 
         layoutFabMessanger.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Messanger", Toast.LENGTH_SHORT).show();
+              openMessanger();
+                //  Toast.makeText(MainActivity.this, "Messanger", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -131,6 +138,112 @@ public class MainActivity extends AppCompatActivity
 
 
     }
+
+
+
+
+    private void openMessanger(){
+
+        String smsNumber = "923133876798";
+        boolean isWhatsappInstalled = whatsappInstalledOrNot("com.facebook.orca");
+        if (isWhatsappInstalled) {
+
+            Intent sendIntent = new Intent("android.intent.action.MAIN");
+            sendIntent.setComponent(new ComponentName("com.facebook.orca", "com.facebook.orca.Conversation"));
+            sendIntent.putExtra("jid", PhoneNumberUtils.stripSeparators(smsNumber) + "@s.whatsapp.net");//phone number without "+" prefix
+
+            startActivity(sendIntent);
+        } else {
+            Uri uri = Uri.parse("market://details?id=com.whatsapp");
+            Intent goToMarket = new Intent(Intent.ACTION_VIEW, uri);
+            Toast.makeText(this, "WhatsApp not Installed",
+                    Toast.LENGTH_SHORT).show();
+            startActivity(goToMarket);
+        }
+
+
+
+
+        /*   Intent sendIntent = new Intent();
+        sendIntent.setAction(Intent.ACTION_SEND);
+        sendIntent.putExtra(Intent.EXTRA_TEXT, "My message to send");
+        sendIntent.setType("text/plain");
+        sendIntent.setPackage("com.facebook.orca");
+
+        try {
+            startActivity(sendIntent);
+        } catch (android.content.ActivityNotFoundException ex) {
+         //   ToastHelper.show(this, "Please Install Facebook Messenger");
+
+        }*/
+    }
+
+
+   // It lets you open WhatsApp conversation screen for that specific user you are trying to communicate with:
+
+    private void openWhatsApp() {
+        String smsNumber = "923133876798";
+        boolean isWhatsappInstalled = whatsappInstalledOrNot("com.whatsapp");
+        if (isWhatsappInstalled) {
+
+            Intent sendIntent = new Intent("android.intent.action.MAIN");
+            sendIntent.setComponent(new ComponentName("com.whatsapp", "com.whatsapp.Conversation"));
+            sendIntent.putExtra("jid", PhoneNumberUtils.stripSeparators(smsNumber) + "@s.whatsapp.net");//phone number without "+" prefix
+
+            startActivity(sendIntent);
+        } else {
+            Uri uri = Uri.parse("market://details?id=com.whatsapp");
+            Intent goToMarket = new Intent(Intent.ACTION_VIEW, uri);
+            Toast.makeText(this, "WhatsApp not Installed",
+                    Toast.LENGTH_SHORT).show();
+            startActivity(goToMarket);
+        }
+    }
+
+    private boolean whatsappInstalledOrNot(String uri) {
+        PackageManager pm = getPackageManager();
+        boolean app_installed = false;
+        try {
+            pm.getPackageInfo(uri, PackageManager.GET_ACTIVITIES);
+            app_installed = true;
+        } catch (PackageManager.NameNotFoundException e) {
+            app_installed = false;
+        }
+        return app_installed;
+    }
+
+
+
+
+
+
+
+
+
+/*
+    private void openWhatsApp() {
+        String smsNumber = "00923133876789"; //without '+'
+        Intent sendIntent = null;
+        try {
+
+                sendIntent = new Intent(Intent.ACTION_SEND);
+                sendIntent.setType("text/plain");
+                sendIntent.putExtra(Intent.EXTRA_TEXT, "This is my text to send.");
+                sendIntent.putExtra("jid", smsNumber + "@s.whatsapp.net"); //phone number without "+" prefix
+                sendIntent.setPackage("com.whatsapp");
+
+                startActivity(sendIntent);
+
+        } catch(Exception e) {
+
+            if (sendIntent.resolveActivity(this.getPackageManager()) == null) {
+                Toast.makeText(this, "Error/n" + e.toString(), Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            Toast.makeText(this, "Error\n" + e.toString(), Toast.LENGTH_SHORT).show();
+        }
+    }*/
 
 
     //closes FAB submenus
@@ -224,7 +337,7 @@ public class MainActivity extends AppCompatActivity
 
 
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }

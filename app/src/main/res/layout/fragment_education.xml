@@ -4,10 +4,219 @@
     android:layout_height="match_parent"
     tools:context="com.mediaproductionart.mediaproductionart.EducationFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="@dimen/margin_4">
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:src="@drawable/education"
+                android:background="@drawable/roundcorners"/>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/margin_3"
+                android:layout_marginTop="@dimen/margin_2">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Graphic Design Suit"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/text_head_1"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/margin_2">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Duration: Six Months"
+                    android:textSize="@dimen/text_head_2"
+                    android:textStyle="bold"
+                    />
+
+
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/simple_text"
+                android:text="In this semester student learn to visualise imagery, creating digital graphics, editing and optimizing of graphics for the web, including digital printing and broadcast media"/>
+
+
+
+
+
+                <TextView
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="@dimen/margin_2"
+                    android:layout_marginBottom="@dimen/margin_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Modules"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/text_head_1"
+                    android:textStyle="bold" />
+
+
+
+
+
+
+
+            <TextView
+                android:id="@+id/type1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="3sp"
+                android:text="• Design and Visualization"
+                android:textSize="@dimen/simple_text"
+                android:layout_below="@+id/body_text3"
+                android:layout_marginLeft="25dp" />
+
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="3sp"
+                android:text="• Graphics and Illustration Fundamentals"
+                android:textSize="@dimen/simple_text"
+                android:layout_below="@+id/type1"
+                android:layout_marginLeft="25dp" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="3sp"
+                android:text="• Logo Design"
+                android:textSize="@dimen/simple_text"
+                android:layout_below="@+id/type1"
+                android:layout_marginLeft="25dp" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="3sp"
+                android:text="• Stationary"
+                android:textSize="@dimen/simple_text"
+                android:layout_below="@+id/type1"
+                android:layout_marginLeft="25dp" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="3sp"
+                android:text="• Flyer, Postcard, Banner"
+                android:textSize="@dimen/simple_text"
+                android:layout_below="@+id/type1"
+                android:layout_marginLeft="25dp" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="3sp"
+                android:text="• Image Magic"
+                android:textSize="@dimen/simple_text"
+                android:layout_below="@+id/type1"
+                android:layout_marginLeft="25dp" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="3sp"
+                android:text="• Portfolio and Final Project"
+                android:textSize="@dimen/simple_text"
+                android:layout_below="@+id/type1"
+                android:layout_marginLeft="25dp" />
+
+
+
+
+
+
+
+
+
+
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/margin_2"
+                android:layout_marginTop="@dimen/margin_2">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/thumbnail_education_g_design_suite"/>
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/simple_text"
+                android:text="As everyone knows iPhone is a standout the most influential gadgets accessible to us luckily we are able to create high streamlined and suitable applications and diversions for your iPhone, with the highly specialized talent to give the greatest usefulness to the gadget while satisfying your needs in a skillful way with alluring looks."/>
+
+
+
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/margin_2"
+                android:layout_marginTop="@dimen/margin_2">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="ANDROID APPS"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/text_head_1"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/simple_text"
+                android:text="The Android applications platform is tractable open source application advancement organize that offers methods for business to dispatch valuable and new portable applications. Our methodology has been planned and demonstrated to create the best brings about the most limited measure of time in android applications."/>
+
+
+
+
+            <include layout="@layout/btn_view_pkgs" />
+            <include layout="@layout/footer" />
+
+        </LinearLayout>
+    </ScrollView>
+
 
 </FrameLayout>
