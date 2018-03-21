@@ -8,8 +8,11 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
@@ -381,38 +384,24 @@ public class MainActivity extends AppCompatActivity
 
 
     public void popupImage(final int img){
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-            }
-        }).setNegativeButton("Close", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-            }
-        });
-        final AlertDialog dialog = builder.create();
-        LayoutInflater inflater = getLayoutInflater();
-        View dialogLayout = inflater.inflate(R.layout.popup_dialog, null);
-        dialog.setView(dialogLayout);
-        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
 
-        dialog.show();
+        ImageView image = new ImageView(this);
+        image.setImageResource(img);
 
-        dialog.setOnShowListener(new DialogInterface.OnShowListener() {
-            @Override
-            public void onShow(DialogInterface d) {
-                ImageView image = (ImageView) dialog.findViewById(R.id.goProDialogImage);
-                Bitmap icon = BitmapFactory.decodeResource(MainActivity.this.getResources(),img);
-                float imageWidthInPX = (float)image.getWidth();
-
-                LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(Math.round(imageWidthInPX),
-                        Math.round(imageWidthInPX * (float)icon.getHeight() / (float)icon.getWidth()));
-                image.setLayoutParams(layoutParams);
+        AlertDialog.Builder builder =
+                new AlertDialog.Builder(this).
+                  //      setMessage("Message above the image").
+                        setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        }).
+                        setView(image);
+        builder.create().show();
 
 
-            }
-        });
+
     }
 
 
@@ -421,10 +410,10 @@ public class MainActivity extends AppCompatActivity
 
     public void changeFragment(Fragment f) {
         // Pop off everything up to and including the current tab
+        //this block of code saves fragment to backstack so don't call it if u don't want to save previous fragment to backstack
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.popBackStack(BACK_STACK_ROOT_TAG, FragmentManager.POP_BACK_STACK_INCLUSIVE);
 
-        // Add the new tab fragment
         fragmentManager.beginTransaction()
                 .replace(R.id.content_main, f)
                 .addToBackStack(BACK_STACK_ROOT_TAG)
@@ -499,6 +488,153 @@ public class MainActivity extends AppCompatActivity
                 popupImage(R.drawable.design_3_max);
                 break;
 
+
+
+
+            case R.id.web_portfolio_1:
+                popupImage(R.drawable.web_portfolio);
+                break;
+
+            case R.id.web_portfolio_2:
+                popupImage(R.drawable.web_portfolio_2);
+                break;
+
+            case R.id.web_portfolio_3:
+                popupImage(R.drawable.web_portfolio_3);
+                break;
+
+            case R.id.web_portfolio_4:
+                popupImage(R.drawable.web_portfolio_4);
+                break;
+
+
+            case R.id.logo_portfolio_1:
+                popupImage(R.drawable.logo_portfolio_1);
+                break;
+
+            case R.id.logo_portfolio_2:
+                popupImage(R.drawable.logo_portfolio_2);
+                break;
+
+            case R.id.logo_portfolio_3:
+                popupImage(R.drawable.logo_portfolio_3);
+                break;
+
+            case R.id.logo_portfolio_4:
+                popupImage(R.drawable.logo_portfolio_4);
+                break;
+
+
+            case R.id.a_logo_portfolio_1:
+                popupImage(R.drawable.a_logo_portfolio);
+                break;
+
+            case R.id.a_logo_portfolio_2:
+                popupImage(R.drawable.a_logo_portfolio_2);
+                break;
+
+            case R.id.a_logo_portfolio_3:
+                popupImage(R.drawable.a_logo_portfolio_3);
+                break;
+
+            case R.id.a_logo_portfolio_4:
+                popupImage(R.drawable.a_logo_portfolio_4);
+                break;
+
+
+            case R.id.b_card_portfolio_1:
+                popupImage(R.drawable.b_card_portfolio_1);
+                break;
+
+            case R.id.b_card_portfolio_2:
+                popupImage(R.drawable.b_card_portfolio_2);
+                break;
+
+            case R.id.b_card_portfolio_3:
+                popupImage(R.drawable.b_card_portfolio_3);
+                break;
+
+            case R.id.b_card_portfolio_4:
+                popupImage(R.drawable.b_card_portfolio_4);
+                break;
+
+
+            case R.id.p_card_portfolio_1:
+                popupImage(R.drawable.p_card_portfolio);
+                break;
+
+            case R.id.p_card_portfolio_2:
+                popupImage(R.drawable.p_card_portfolio_2);
+                break;
+
+            case R.id.p_card_portfolio_3:
+                popupImage(R.drawable.p_card_portfolio_3);
+                break;
+
+            case R.id.p_card_portfolio_4:
+                popupImage(R.drawable.p_card_portfolio_4);
+                break;
+
+
+            case R.id.brouchers_portfolio_1:
+                popupImage(R.drawable.broucher_portfolio_1);
+                break;
+
+            case R.id.brouchers_portfolio_2:
+                popupImage(R.drawable.broucher_portfolio_2);
+                break;
+
+            case R.id.brouchers_portfolio_3:
+                popupImage(R.drawable.broucher_portfolio_3);
+                break;
+
+
+            case R.id.flyer_portfolio_1:
+                popupImage(R.drawable.flyer_portfolio_1);
+                break;
+
+            case R.id.flyer_portfolio_2:
+                popupImage(R.drawable.flyer_portfolio_2);
+                break;
+
+            case R.id.flyer_portfolio_3:
+                popupImage(R.drawable.flyer_portfolio_3);
+                break;
+
+            case R.id.flyer_portfolio_4:
+                popupImage(R.drawable.flyer_portfolio_4);
+                break;
+
+            case R.id.portfolio_3d_archicture_1:
+                popupImage(R.drawable.portfolio_3d_1);
+                break;
+
+            case R.id.portfolio_3d_archicture_2:
+                popupImage(R.drawable.portfolio_3d_2);
+                break;
+
+            case R.id.portfolio_3d_archicture_3:
+                popupImage(R.drawable.portfolio_3d_3);
+                break;
+
+            case R.id.portfolio_3d_archicture_4:
+                popupImage(R.drawable.portfolio_3d_4);
+                break;
+
         }
+
+
+
+        if (id == R.id.btn_view_more_portfolio_1 || id == R.id.btn_view_more_portfolio_2 || id == R.id.btn_view_more_portfolio_3
+                || id == R.id.btn_view_more_portfolio_4 || id == R.id.btn_view_more_portfolio_5 ||
+                id == R.id.btn_view_more_portfolio_6 || id == R.id.btn_view_more_portfolio_7 ||
+                id == R.id.btn_view_more_portfolio_8){
+
+            Intent browseViewMoreIntent = new Intent(MainActivity.this,BrowserActivity.class);
+            browseViewMoreIntent.putExtra("title","Portfolio");
+            browseViewMoreIntent.putExtra("url","https://mediaproductionart.com/portfolio");
+            startActivity(browseViewMoreIntent);
+        }
+
     }
 }
