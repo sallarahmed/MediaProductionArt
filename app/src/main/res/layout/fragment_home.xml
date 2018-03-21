@@ -72,6 +72,7 @@
 
 
             <TextView
+                android:id="@+id/tv_web_design_home"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Website Designing"
@@ -92,6 +93,7 @@
                 />
 
                 <TextView
+                    android:id="@+id/tv_web_development_home"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Website Development"
@@ -112,6 +114,7 @@
                     />
 
                 <TextView
+                    android:id="@+id/tv_graphic_design_home"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Graphic Designing"
@@ -132,6 +135,7 @@
                     />
 
                 <TextView
+                    android:id="@+id/tv_online_marketing_home"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Online Marketing(S.E.O)"
@@ -152,6 +156,7 @@
                     />
 
                 <TextView
+                    android:id="@+id/tv_social_media_marketing_home"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Social Media Marketing"
@@ -172,6 +177,7 @@
                     />
 
                 <TextView
+                    android:id="@+id/tv_print_media_branding_home"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Print Media and Branding"
@@ -192,6 +198,7 @@
                     />
 
                 <TextView
+                    android:id="@+id/tv_mobile_app_dev_home"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Mobile App Development"
@@ -212,6 +219,7 @@
                     />
 
                 <TextView
+                    android:id="@+id/tv_domain_and_web_home"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Domain and Web Hosting"

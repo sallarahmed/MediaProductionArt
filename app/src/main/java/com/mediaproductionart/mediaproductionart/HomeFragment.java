@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 
 /**
@@ -22,6 +23,10 @@ public class HomeFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    private View mView;
+    private Context context;
+    private TextView tvWebDesign, tvWebDevelopment, tvGraphicDesign, tvOnlineMarketing, tvSocialMedia, tvPrintMedia,
+            tvMobileApp, tvDomainAndWebHost;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -63,8 +68,35 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        mView = inflater.inflate(R.layout.fragment_home, container, false);
+        context = mView.getContext();
+        tvWebDesign = mView.findViewById(R.id.tv_web_design_home);
+        tvWebDesign.setOnClickListener((View.OnClickListener) context);
+
+        tvWebDevelopment = mView.findViewById(R.id.tv_web_development_home);
+        tvWebDevelopment.setOnClickListener((View.OnClickListener) context);
+
+        tvGraphicDesign = mView.findViewById(R.id.tv_graphic_design_home);
+        tvGraphicDesign.setOnClickListener((View.OnClickListener) context);
+
+        tvOnlineMarketing = mView.findViewById(R.id.tv_online_marketing_home);
+        tvOnlineMarketing.setOnClickListener((View.OnClickListener) context);
+
+        tvSocialMedia = mView.findViewById(R.id.tv_social_media_marketing_home);
+        tvSocialMedia.setOnClickListener((View.OnClickListener) context);
+
+        tvPrintMedia = mView.findViewById(R.id.tv_print_media_branding_home);
+        tvPrintMedia.setOnClickListener((View.OnClickListener) context);
+
+        tvMobileApp = mView.findViewById(R.id.tv_mobile_app_dev_home);
+        tvMobileApp.setOnClickListener((View.OnClickListener) context);
+
+        tvDomainAndWebHost = mView.findViewById(R.id.tv_domain_and_web_home);
+        tvDomainAndWebHost.setOnClickListener((View.OnClickListener) context);
+
+
+        return mView;
+
     }
 
     // TODO: Rename method, update argument and hook method into UI event

@@ -1,12 +1,19 @@
 package com.mediaproductionart.mediaproductionart;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 
 /**
@@ -26,6 +33,9 @@ public class EducationFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private Context context;
+    private View mView;
+    private ImageView iv1,iv2,iv3,iv4;
 
     private OnFragmentInteractionListener mListener;
 
@@ -37,17 +47,17 @@ public class EducationFragment extends Fragment {
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
      *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
+   //  * @param param1 Parameter 1.
+   //  * @param param2 Parameter 2.
      * @return A new instance of fragment EducationFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static EducationFragment newInstance(String param1, String param2) {
+    public static EducationFragment newInstance() {
         EducationFragment fragment = new EducationFragment();
-        Bundle args = new Bundle();
+      /*  Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
+        fragment.setArguments(args);*/
         return fragment;
     }
 
@@ -63,8 +73,24 @@ public class EducationFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_education, container, false);
+        mView = inflater.inflate(R.layout.fragment_education, container, false);
+        context = mView.getContext();
+
+     //   iv4 = mView.findViewById(R.id.)
+        iv1 = mView.findViewById(R.id.img_1_3d_max);
+        iv1.setOnClickListener((View.OnClickListener) context);
+
+        iv2 = mView.findViewById(R.id.img_2_3d_max);
+        iv2.setOnClickListener((View.OnClickListener) context);
+
+        iv3 = mView.findViewById(R.id.img_3_3d_max);
+        iv3.setOnClickListener((View.OnClickListener) context);
+
+
+        iv4 = mView.findViewById(R.id.img_4_3d_max);
+        iv4.setOnClickListener((View.OnClickListener) context);
+
+        return mView;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -73,6 +99,11 @@ public class EducationFragment extends Fragment {
             mListener.onFragmentInteraction(uri);
         }
     }
+
+
+
+
+
 
     @Override
     public void onAttach(Context context) {

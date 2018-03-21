@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.mediaproductionart.mediaproductionart">
+
     <uses-permission android:name="android.permission.INTERNET" />
 
 
@@ -21,7 +22,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".BrowserActivity"></activity>
+        <activity android:name=".BrowserActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.mediaproductionart.mediaproductionart.MainActivity" />
+
+        </activity>
     </application>
 
 </manifest>

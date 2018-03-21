@@ -1,14 +1,21 @@
 package com.mediaproductionart.mediaproductionart;
 
+import android.app.AlertDialog;
+import android.app.FragmentTransaction;
 import android.content.ComponentName;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.telephony.PhoneNumberUtils;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -18,8 +25,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -39,7 +49,7 @@ public class MainActivity extends AppCompatActivity
         OnlineMarketingFragment.OnFragmentInteractionListener,PrintMediaFragment.OnFragmentInteractionListener,SocialMediaFragment.OnFragmentInteractionListener
 ,WebDevelopmentFragment.OnFragmentInteractionListener ,AboutUsFragment.OnFragmentInteractionListener ,BlogFragment.OnFragmentInteractionListener
 ,ContUsFragment.OnFragmentInteractionListener,EducationFragment.OnFragmentInteractionListener,PackagesFragment.OnFragmentInteractionListener,
-        CarrierFragment.OnFragmentInteractionListener,PortfolioFragment.OnFragmentInteractionListener {
+        CarrierFragment.OnFragmentInteractionListener,PortfolioFragment.OnFragmentInteractionListener ,View.OnClickListener {
 
 
 
@@ -47,6 +57,10 @@ public class MainActivity extends AppCompatActivity
     private FloatingActionButton fabChat;
     private LinearLayout layoutFabWhatsapp;
     private LinearLayout layoutFabMessanger;
+    private DrawerLayout drawer;
+
+
+    private static final String BACK_STACK_ROOT_TAG = "root_fragment";
   //  private LinearLayout layoutFabPhoto;
 
 
@@ -69,6 +83,7 @@ public class MainActivity extends AppCompatActivity
 
         layoutFabMessanger =  this.findViewById(R.id.layoutFabMessanger);
         layoutFabWhatsapp =  this.findViewById(R.id.layoutFabWhatsApp);
+
 
 
         fabChat.setOnClickListener(new View.OnClickListener() {
@@ -106,7 +121,7 @@ public class MainActivity extends AppCompatActivity
 
 
 
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
@@ -126,6 +141,9 @@ public class MainActivity extends AppCompatActivity
                 getSupportFragmentManager().beginTransaction().
                         replace(R.id.content_main, f[position]).commit();
 
+                if (drawer.isDrawerOpen(GravityCompat.START)) {
+                    drawer.closeDrawer(GravityCompat.START);
+                }
            //     Toast.makeText(MainActivity.this,services[position],Toast.LENGTH_SHORT).show();
             }
             @Override
@@ -220,6 +238,7 @@ public class MainActivity extends AppCompatActivity
 
 
 
+
 /*
     private void openWhatsApp() {
         String smsNumber = "00923133876789"; //without '+'
@@ -268,7 +287,7 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        drawer = findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
@@ -321,9 +340,24 @@ public class MainActivity extends AppCompatActivity
                         replace(R.id.content_main, f[11]).commit();
                 break;
             case R.id.nav_packages:
-                getSupportFragmentManager().beginTransaction().
-                        replace(R.id.content_main, f[12]).commit();
+
+               Intent browserActivity = new Intent(this,BrowserActivity.class);
+               browserActivity.putExtra("title","Packages");
+               browserActivity.putExtra("url","https://mediaproductionart.com/packages");
+               startActivity(browserActivity);
+
+                /*getSupportFragmentManager().beginTransaction().
+                        replace(R.id.content_main, f[12]).commit();*/
                 break;
+
+            case R.id.nav_blog:
+
+                Intent bActivity = new Intent(this,BrowserActivity.class);
+                bActivity.putExtra("title","Blog");
+                bActivity.putExtra("url","https://www.mediaproductionart.com/Blog/");
+                startActivity(bActivity);
+                break;
+
             case R.id.nav_about_us:
                 getSupportFragmentManager().beginTransaction().
                         replace(R.id.content_main, f[13]).commit();
@@ -342,8 +376,129 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
+
+
+
+
+    public void popupImage(final int img){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+            }
+        }).setNegativeButton("Close", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+            }
+        });
+        final AlertDialog dialog = builder.create();
+        LayoutInflater inflater = getLayoutInflater();
+        View dialogLayout = inflater.inflate(R.layout.popup_dialog, null);
+        dialog.setView(dialogLayout);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+
+        dialog.show();
+
+        dialog.setOnShowListener(new DialogInterface.OnShowListener() {
+            @Override
+            public void onShow(DialogInterface d) {
+                ImageView image = (ImageView) dialog.findViewById(R.id.goProDialogImage);
+                Bitmap icon = BitmapFactory.decodeResource(MainActivity.this.getResources(),img);
+                float imageWidthInPX = (float)image.getWidth();
+
+                LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(Math.round(imageWidthInPX),
+                        Math.round(imageWidthInPX * (float)icon.getHeight() / (float)icon.getWidth()));
+                image.setLayoutParams(layoutParams);
+
+
+            }
+        });
+    }
+
+
+
+
+
+    public void changeFragment(Fragment f) {
+        // Pop off everything up to and including the current tab
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.popBackStack(BACK_STACK_ROOT_TAG, FragmentManager.POP_BACK_STACK_INCLUSIVE);
+
+        // Add the new tab fragment
+        fragmentManager.beginTransaction()
+                .replace(R.id.content_main, f)
+                .addToBackStack(BACK_STACK_ROOT_TAG)
+                .commit();
+    }
+
     @Override
     public void onFragmentInteraction(Uri uri) {
 
+    }
+
+    @Override
+    public void onClick(View v) {
+        int id = v.getId();
+        switch (id){
+
+            case R.id.btn_view_packages:
+                Intent browsePkgIntent = new Intent(MainActivity.this,BrowserActivity.class);
+                browsePkgIntent.putExtra("title","Packages");
+                browsePkgIntent.putExtra("url","https://mediaproductionart.com/packages");
+                startActivity(browsePkgIntent);
+                break;
+
+
+            case R.id.tv_web_design_home:
+                changeFragment(f[1]);
+                break;
+
+            case R.id.tv_web_development_home:
+                changeFragment(f[2]);
+                break;
+
+            case R.id.tv_graphic_design_home:
+                changeFragment(f[3]);
+                break;
+
+            case R.id.tv_online_marketing_home:
+                changeFragment(f[4]);
+                break;
+
+            case R.id.tv_social_media_marketing_home:
+                changeFragment(f[5]);
+                break;
+
+            case R.id.tv_print_media_branding_home:
+                changeFragment(f[6]);
+                break;
+
+            case R.id.tv_mobile_app_dev_home:
+                changeFragment(f[7]);
+                break;
+
+            case R.id.tv_domain_and_web_home:
+                changeFragment(f[8]);
+                break;
+
+
+
+            case R.id.img_1_3d_max:
+                popupImage(R.drawable.education_g_design_suite);
+                break;
+
+            case R.id.img_2_3d_max:
+                popupImage(R.drawable.education_w_design);
+                break;
+
+            case R.id.img_3_3d_max:
+                popupImage(R.drawable.education_av_fx_suite);
+                break;
+
+            case R.id.img_4_3d_max:
+                popupImage(R.drawable.design_3_max);
+                break;
+
+        }
     }
 }
