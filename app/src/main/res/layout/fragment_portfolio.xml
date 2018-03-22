@@ -876,7 +876,7 @@
                         android:id="@+id/portfolio_3d_archicture_2"
                         android:layout_width="60dp"
                         android:layout_height="60dp"
-                        android:src="@drawable/thumbnail_logo_portfolio_2"
+                        android:src="@drawable/thumbnail_portfolio_3d_2"
                         android:layout_marginBottom="@dimen/margin_4"/>
 
 

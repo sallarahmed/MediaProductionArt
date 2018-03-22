@@ -180,7 +180,6 @@
                 android:lineSpacingExtra="3sp"
                 android:text="• Database Support: MS SQL Server, MySQL Server, MS Access and Excel."
                 android:textSize="@dimen/simple_text"
-                android:layout_below="@+id/type1"
                 android:layout_marginLeft="25dp" />
 
             <TextView
@@ -189,7 +188,6 @@
                 android:lineSpacingExtra="3sp"
                 android:text="• UPS battery backup and backup diesel generators."
                 android:textSize="@dimen/simple_text"
-                android:layout_below="@+id/type1"
                 android:layout_marginLeft="25dp" />
 
 

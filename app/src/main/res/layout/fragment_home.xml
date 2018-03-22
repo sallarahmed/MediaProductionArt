@@ -247,6 +247,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
+                android:layout_marginTop="@dimen/margin_2"
                 android:background="@drawable/roundcorners_2">
 
                 <LinearLayout
@@ -267,13 +268,14 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="150dp"
+                    android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:gravity="center_horizontal">
 
                     <LinearLayout
-                        android:layout_width="150dp"
+                        android:layout_width="130dp"
                         android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margin_4"
                         android:orientation="vertical">
 
                         <TextView
@@ -291,14 +293,15 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:textColor="@color/colorText"
                             android:textSize="@dimen/small_text"
-                            android:text="The client submits a precise definition of what they require and how they want to
-                            see their logo design"/>
+                            android:text="The client submits a precise definition of what they require and how they want to see their logo design"/>
                     </LinearLayout>
 
                     <LinearLayout
-                        android:layout_width="150dp"
+                        android:layout_width="140dp"
                         android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margin_4"
                         android:orientation="vertical">
 
                         <TextView
@@ -316,9 +319,9 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:textColor="@color/colorText"
                             android:textSize="@dimen/small_text"
-                            android:text="Our design team's creative instincts take charge enabling them to provide with
-                            initial samples as per your selected package."/>
+                            android:text="Our design team's creative instincts take charge enabling them to provide with initial samples as per your selected package."/>
                     </LinearLayout>
 
 
@@ -328,13 +331,14 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="150dp"
+                    android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:gravity="center_horizontal">
 
                     <LinearLayout
-                        android:layout_width="150dp"
+                        android:layout_width="130dp"
                         android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margin_4"
                         android:orientation="vertical">
 
                         <TextView
@@ -352,13 +356,15 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:textColor="@color/colorText"
                             android:textSize="@dimen/small_text"
                             android:text="Variations and modifications done based on your preferences to the selected logo design."/>
                     </LinearLayout>
 
                     <LinearLayout
-                        android:layout_width="150dp"
+                        android:layout_width="130dp"
                         android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margin_4"
                         android:orientation="vertical">
 
                         <TextView
@@ -377,7 +383,161 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="@dimen/small_text"
+                            android:textColor="@color/colorText"
                             android:text="Your brand new logo completely done to your specifications is delivered to you."/>
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/margin_2"
+                    android:layout_marginBottom="@dimen/margin_3"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Awards and Recognitions"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/text_head_1"
+                        android:textStyle="bold"
+                        />
+
+
+
+
+
+                </LinearLayout>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="We've been Honored and Recognized for our Outstanding Achievements in the Industry."
+                android:textAlignment="center"
+                />
+
+
+
+
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="@dimen/margin_4"
+                    android:layout_marginBottom="@dimen/margin_4">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margin_4"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:src="@drawable/pldaward"
+                            />
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margin_4"
+                        android:orientation="vertical">
+
+
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:src="@drawable/pldaward2"
+                            android:layout_marginBottom="@dimen/margin_4"/>
+
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margin_4"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:src="@drawable/pldaward3"
+                            android:layout_marginBottom="@dimen/margin_4"/>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="@dimen/margin_4"
+                    android:layout_marginBottom="@dimen/margin_4">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margin_4"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:src="@drawable/pldaward4"
+                            />
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margin_4"
+                        android:orientation="vertical">
+
+
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:src="@drawable/pldaward5"
+                            android:layout_marginBottom="@dimen/margin_4"/>
+
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margin_4"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:src="@drawable/pldaward6"
+                            android:layout_marginBottom="@dimen/margin_4"/>
+
                     </LinearLayout>
 
 
@@ -387,7 +547,7 @@
 
 
 
-            </LinearLayout>
+
 
 
 

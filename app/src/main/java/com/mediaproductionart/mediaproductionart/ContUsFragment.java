@@ -7,6 +7,9 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 
 /**
@@ -26,6 +29,10 @@ public class ContUsFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private View mView;
+    private Context context;
+    private EditText etName , etEmail, etSubject, etMessage;
+    private Button btnSubmit;
 
     private OnFragmentInteractionListener mListener;
 
@@ -63,8 +70,22 @@ public class ContUsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_cont_us, container, false);
+        mView = inflater.inflate(R.layout.fragment_cont_us, container, false);
+        context = mView.getContext();
+        etName = mView.findViewById(R.id.etNameContUs);
+        etEmail = mView.findViewById(R.id.etEmailContUs);
+        etSubject = mView.findViewById(R.id.etSubjectContUs);
+        etMessage = mView.findViewById(R.id.etMessageContUs);
+        btnSubmit = mView.findViewById(R.id.btnSubmitContUs);
+        btnSubmit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(context, "chahe", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+        return mView;
     }
 
     // TODO: Rename method, update argument and hook method into UI event

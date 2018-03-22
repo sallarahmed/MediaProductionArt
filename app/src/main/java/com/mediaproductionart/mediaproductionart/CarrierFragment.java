@@ -7,6 +7,10 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.TextView;
 
 
 /**
@@ -26,6 +30,11 @@ public class CarrierFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private Context context;
+    private View mView;
+    EditText etName, etEmail, etDOB, etContNo, etCountry, etCity;
+    Spinner sAppliedFor, sQualification;
+    Button btnUpload,btnSubmit;
 
     private OnFragmentInteractionListener mListener;
 
@@ -63,8 +72,21 @@ public class CarrierFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_carrier, container, false);
+        mView = inflater.inflate(R.layout.fragment_carrier, container, false);
+        context = mView.getContext();
+        etName = mView.findViewById(R.id.etNameCarrier);
+        etEmail = mView.findViewById(R.id.etEmailCarrier);
+        etDOB = mView.findViewById(R.id.etDOB_Carrier);
+        etContNo = mView.findViewById(R.id.etContNoCarrier);
+        etCountry = mView.findViewById(R.id.etCountryCarrier);
+        etCity = mView.findViewById(R.id.etCityCarrier);
+        sAppliedFor = mView.findViewById(R.id.spinnerApplierFor);
+        sQualification = mView.findViewById(R.id.spinnerQualification);
+        btnUpload = mView.findViewById(R.id.btnUploadCV_Carrier);
+        btnSubmit = mView.findViewById(R.id.btnSubmitCarrier);
+
+
+        return mView;
     }
 
     // TODO: Rename method, update argument and hook method into UI event

@@ -46,6 +46,8 @@ import com.mediaproductionart.mediaproductionart.services.SocialMediaFragment;
 import com.mediaproductionart.mediaproductionart.services.WebDesigningFragment;
 import com.mediaproductionart.mediaproductionart.services.WebDevelopmentFragment;
 
+import pl.droidsonroids.gif.GifImageView;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener ,HomeFragment.OnFragmentInteractionListener,WebDesigningFragment.OnFragmentInteractionListener
 ,DomainAndWebFragment.OnFragmentInteractionListener,GraphicDesigningFragment.OnFragmentInteractionListener,MobileAppFragment.OnFragmentInteractionListener,
@@ -385,13 +387,13 @@ public class MainActivity extends AppCompatActivity
 
     public void popupImage(final int img){
 
-        ImageView image = new ImageView(this);
+        GifImageView image = new GifImageView(this);
         image.setImageResource(img);
 
         AlertDialog.Builder builder =
                 new AlertDialog.Builder(this).
                   //      setMessage("Message above the image").
-                        setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        setPositiveButton("Close", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 dialog.dismiss();
