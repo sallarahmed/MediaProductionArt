@@ -1,5 +1,6 @@
 package com.mediaproductionart.mediaproductionart;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.FragmentTransaction;
 import android.content.ComponentName;
@@ -18,6 +19,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.telephony.PhoneNumberUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -68,7 +70,7 @@ public class MainActivity extends AppCompatActivity
     private static final String BACK_STACK_ROOT_TAG = "root_fragment";
   //  private LinearLayout layoutFabPhoto;
 
-
+    public static final int requestCode = 1;
     String services[]={"Select Service","Website Designing","Graphic Designing","Website Development","Online Marketing(SEO)",
             "Social Media Marketing","Print Media and Branding","Mobile app Development","Domain and Web Hosting"};
 
@@ -428,6 +430,24 @@ public class MainActivity extends AppCompatActivity
     }
 
     @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == Activity.RESULT_OK) {
+            // The document selected by the user won't be returned in the intent.
+            // Instead, a URI to that document will be contained in the return intent
+            // provided to this method as a parameter.
+            // Pull that URI using resultData.getData().
+            Uri uri = null;
+            if (data != null) {
+                uri = data.getData();
+                Log.i("MainActivity", "Uri: " + uri.toString());
+
+
+            }
+        }
+    }
+
+    @Override
     public void onClick(View v) {
         int id = v.getId();
         switch (id){
@@ -622,6 +642,24 @@ public class MainActivity extends AppCompatActivity
             case R.id.portfolio_3d_archicture_4:
                 popupImage(R.drawable.portfolio_3d_4);
                 break;
+
+
+
+
+            case R.id.btnUploadCV_Carrier:
+                Intent i=new Intent();
+                i.setType("image/*|application/pdf");
+                i.setAction(Intent.ACTION_GET_CONTENT);
+                i.addCategory(Intent.CATEGORY_OPENABLE);
+                startActivityForResult(Intent.createChooser(i, "abc"),requestCode);
+                break;
+
+            case R.id.btnSubmitCarrier:
+                Toast.makeText(this, "natho submit kayan cha kandy", Toast.LENGTH_SHORT).show();
+                break;
+
+
+
 
         }
 

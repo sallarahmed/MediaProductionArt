@@ -1,6 +1,7 @@
 package com.mediaproductionart.mediaproductionart;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -36,6 +37,7 @@ public class CarrierFragment extends Fragment {
     private EditText etName, etEmail, etDOB, etContNo, etCountry, etCity;
     private Spinner sAppliedFor, sQualification;
     private Button btnUpload,btnSubmit;
+    int requestCode = 1;
     private String [] applied = {"Select Applying for","Internship","Job"};
     private String [] qualification = {"Select your Qualification","Matriculation","Intermediate","BSC","B.Com","BCS"
     ,"MBA","BBA","BA","BSIT","MSIT","MA","Software Engineering","Other"};
@@ -93,9 +95,12 @@ public class CarrierFragment extends Fragment {
         qAdp.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         sQualification.setAdapter(qAdp);
 
-        ArrayAdapter<String> adp= new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,list);
-        adp.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        sp.setAdapter(adp);
+        ArrayAdapter<String> aAdp= new ArrayAdapter<String>(context,android.R.layout.simple_list_item_1,applied);
+        aAdp.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        sAppliedFor.setAdapter(aAdp);
+
+        btnUpload.setOnClickListener((View.OnClickListener) context);
+        btnSubmit.setOnClickListener((View.OnClickListener) context);
 
 
         return mView;

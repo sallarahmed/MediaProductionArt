@@ -83,6 +83,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Contact No"
+                        android:inputType="phone"
                         android:id="@+id/etContNoCarrier"/>
                 </android.support.design.widget.TextInputLayout>
 
@@ -97,6 +98,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Country"
+                        android:inputType="text"
                         android:id="@+id/etCountryCarrier"/>
                 </android.support.design.widget.TextInputLayout>
 
@@ -109,6 +111,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="City"
+                        android:inputType="text"
                         android:id="@+id/etCityCarrier"/>
                 </android.support.design.widget.TextInputLayout>
 
