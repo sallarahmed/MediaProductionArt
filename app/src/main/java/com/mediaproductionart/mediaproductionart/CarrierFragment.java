@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -32,9 +33,12 @@ public class CarrierFragment extends Fragment {
     private String mParam2;
     private Context context;
     private View mView;
-    EditText etName, etEmail, etDOB, etContNo, etCountry, etCity;
-    Spinner sAppliedFor, sQualification;
-    Button btnUpload,btnSubmit;
+    private EditText etName, etEmail, etDOB, etContNo, etCountry, etCity;
+    private Spinner sAppliedFor, sQualification;
+    private Button btnUpload,btnSubmit;
+    private String [] applied = {"Select Applying for","Internship","Job"};
+    private String [] qualification = {"Select your Qualification","Matriculation","Intermediate","BSC","B.Com","BCS"
+    ,"MBA","BBA","BA","BSIT","MSIT","MA","Software Engineering","Other"};
 
     private OnFragmentInteractionListener mListener;
 
@@ -84,6 +88,14 @@ public class CarrierFragment extends Fragment {
         sQualification = mView.findViewById(R.id.spinnerQualification);
         btnUpload = mView.findViewById(R.id.btnUploadCV_Carrier);
         btnSubmit = mView.findViewById(R.id.btnSubmitCarrier);
+
+        ArrayAdapter<String> qAdp= new ArrayAdapter<String>(context,android.R.layout.simple_list_item_1,qualification);
+        qAdp.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        sQualification.setAdapter(qAdp);
+
+        ArrayAdapter<String> adp= new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,list);
+        adp.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        sp.setAdapter(adp);
 
 
         return mView;
