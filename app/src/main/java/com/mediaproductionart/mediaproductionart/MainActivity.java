@@ -1,24 +1,31 @@
 package com.mediaproductionart.mediaproductionart;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.FragmentTransaction;
 import android.content.ComponentName;
+import android.content.Context;
+import android.content.CursorLoader;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.provider.DocumentsContract;
+import android.provider.MediaStore;
 import android.support.annotation.RequiresApi;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.telephony.PhoneNumberUtils;
+import android.util.Base64;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -47,6 +54,11 @@ import com.mediaproductionart.mediaproductionart.services.PrintMediaFragment;
 import com.mediaproductionart.mediaproductionart.services.SocialMediaFragment;
 import com.mediaproductionart.mediaproductionart.services.WebDesigningFragment;
 import com.mediaproductionart.mediaproductionart.services.WebDevelopmentFragment;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 
 import pl.droidsonroids.gif.GifImageView;
 
@@ -151,7 +163,6 @@ public class MainActivity extends AppCompatActivity
                 if (drawer.isDrawerOpen(GravityCompat.START)) {
                     drawer.closeDrawer(GravityCompat.START);
                 }
-           //     Toast.makeText(MainActivity.this,services[position],Toast.LENGTH_SHORT).show();
             }
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
@@ -429,23 +440,119 @@ public class MainActivity extends AppCompatActivity
 
     }
 
+    public static class RealPathUtils {
+
+        @SuppressLint("NewApi")
+        public static String getRealPathFromURI_API19(Context context, Uri uri){
+            String filePath = "";
+            String wholeID = DocumentsContract.getDocumentId(uri);
+
+            // Split at colon, use second item in the array
+            String id = wholeID.split(":")[1];
+
+            String[] column = { MediaStore.Images.Media.DATA };
+
+            // where id is equal to
+            String sel = MediaStore.Images.Media._ID + "=?";
+
+            Cursor cursor = context.getContentResolver().query(MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
+                    column, sel, new String[]{ id }, null);
+
+            int columnIndex = cursor.getColumnIndex(column[0]);
+
+            if (cursor.moveToFirst()) {
+                filePath = cursor.getString(columnIndex);
+            }
+            cursor.close();
+            return filePath;
+        }
+
+
+        @SuppressLint("NewApi")
+        public static String getRealPathFromURI_API11to18(Context context, Uri contentUri) {
+            String[] proj = { MediaStore.Images.Media.DATA };
+            String result = null;
+
+            CursorLoader cursorLoader = new CursorLoader(
+                    context,
+                    contentUri, proj, null, null, null);
+            Cursor cursor = cursorLoader.loadInBackground();
+
+            if(cursor != null){
+                int column_index =
+                        cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
+                cursor.moveToFirst();
+                result = cursor.getString(column_index);
+            }
+            return result;
+        }
+
+        public static String getRealPathFromURI_BelowAPI11(Context context, Uri contentUri){
+            String[] proj = { MediaStore.Images.Media.DATA };
+            Cursor cursor = context.getContentResolver().query(contentUri, proj, null, null, null);
+            int column_index
+                    = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
+            cursor.moveToFirst();
+            return cursor.getString(column_index);
+        }
+    }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == Activity.RESULT_OK) {
-            // The document selected by the user won't be returned in the intent.
-            // Instead, a URI to that document will be contained in the return intent
-            // provided to this method as a parameter.
-            // Pull that URI using resultData.getData().
-            Uri uri = null;
-            if (data != null) {
-                uri = data.getData();
-                Log.i("MainActivity", "Uri: " + uri.toString());
-
-
+            Uri uri = data.getData();
+            String uriString = uri.toString();
+            File myFile = new File(uriString);
+            String path = myFile.getAbsolutePath();
+            String encodedText = null;
+            try {
+               encodedText = encodeFileToBase64Binary(path);
+                Log.e("TAG", "Encoded Text :"+encodedText );
+                Log.e("TAG", "Path :"+path);
+            } catch (IOException e) {
+                e.printStackTrace();
             }
+
+            Log.e("TAG", "Outside Encoded Text :"+encodedText );
+            Log.e("TAG", "Outside Path :"+path);
         }
     }
+
+    private String encodeFileToBase64Binary(String fileName)
+            throws IOException {
+
+        File file = new File(fileName);
+        byte[] bytes = loadFile(file);
+        String encoded = Base64.encodeToString(bytes,1);
+        String encodedString = new String(encoded);
+
+        return encoded;
+    }
+    private static byte[] loadFile(File file) throws IOException {
+        InputStream is = new FileInputStream(file);
+
+        long length = file.length();
+        if (length > Integer.MAX_VALUE) {
+            // File is too large
+        }
+        byte[] bytes = new byte[(int)length];
+
+        int offset = 0;
+        int numRead = 0;
+        while (offset < bytes.length
+                && (numRead=is.read(bytes, offset, bytes.length-offset)) >= 0) {
+            offset += numRead;
+        }
+
+        if (offset < bytes.length) {
+            throw new IOException("Could not completely read file "+file.getName());
+        }
+
+        is.close();
+        return bytes;
+    }
+
 
     @Override
     public void onClick(View v) {

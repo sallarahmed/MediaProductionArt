@@ -7,51 +7,60 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
-            android:title="Home" />
+            android:title="Home"
+            android:icon="@drawable/ic_home"/>
         <item
             android:id="@+id/nav_portfolio"
-            android:title="Portfolio" />
+            android:title="Portfolio"
+            android:icon="@drawable/ic_portfolio"/>
 
         <item
             android:id="@+id/nav_carrier"
-            android:title="Carrier" />
+            android:title="Carrier"
+            android:icon="@drawable/ic_carrier"/>
 
 
         <item
             android:id="@+id/nav_education"
-            android:title="Education" />
+            android:title="Education"
+            android:icon="@drawable/ic_education"/>
 
     </group>
 
     <item
         android:id="@+id/nav_packages"
-        android:title="Packages" />
+        android:title="Packages"
+        android:icon="@drawable/ic_packages"/>
 
     <item
         android:id="@+id/nav_blog"
-        android:title="Blog" />
+        android:title="Blog"
+        android:icon="@drawable/ic_bolg"/>
 
 
 
-    <item android:title="Services">
+    <item android:title="">
         <menu>
 
             <item
                 android:id="@+id/navigation_drawer_item3"
                 android:title=""
+                android:icon="@drawable/ic_services"
                 app:actionLayout="@layout/drawer_spinner"/>
 
         </menu>
     </item>
-<item android:title="Extra">
+<item android:title="">
     <menu>
 
             <item
                 android:id="@+id/nav_about_us"
-                android:title="About Us" />
+                android:title="About Us"
+                android:icon="@drawable/ic_about_us"/>
             <item
                 android:id="@+id/nav_cont_us"
-                android:title="Contact Us" />
+                android:title="Contact Us"
+                android:icon="@drawable/ic_cont_us"/>
         </menu>
     </item>
 
