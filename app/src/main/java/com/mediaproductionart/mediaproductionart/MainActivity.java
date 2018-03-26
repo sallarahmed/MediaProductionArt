@@ -5,6 +5,8 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.FragmentTransaction;
 import android.content.ComponentName;
+import android.content.ContentResolver;
+import android.content.ContentUris;
 import android.content.Context;
 import android.content.CursorLoader;
 import android.content.DialogInterface;
@@ -71,14 +73,15 @@ public class MainActivity extends AppCompatActivity
         CarrierFragment.OnFragmentInteractionListener,PortfolioFragment.OnFragmentInteractionListener ,View.OnClickListener {
 
 
-
+    public static String FACEBOOK_URL = "https://www.facebook.com/sallarahmed2";
+    public static String FACEBOOK_PAGE_ID = "sallarahmed2";
     private boolean fabExpanded = false;
     private FloatingActionButton fabChat;
     private LinearLayout layoutFabWhatsapp;
     private LinearLayout layoutFabMessanger;
     private DrawerLayout drawer;
 
-
+   // Uri obj "sallar";
     private static final String BACK_STACK_ROOT_TAG = "root_fragment";
   //  private LinearLayout layoutFabPhoto;
 
@@ -178,44 +181,45 @@ public class MainActivity extends AppCompatActivity
 
 
 
-    private void openMessanger(){
-
-        String smsNumber = "923133876798";
-        boolean isWhatsappInstalled = whatsappInstalledOrNot("com.facebook.orca");
-        if (isWhatsappInstalled) {
-
-            Intent sendIntent = new Intent("android.intent.action.MAIN");
-            sendIntent.setComponent(new ComponentName("com.facebook.orca", "com.facebook.orca.Conversation"));
-            sendIntent.putExtra("jid", PhoneNumberUtils.stripSeparators(smsNumber) + "@s.whatsapp.net");//phone number without "+" prefix
-
-            startActivity(sendIntent);
-        } else {
-            Uri uri = Uri.parse("market://details?id=com.whatsapp");
-            Intent goToMarket = new Intent(Intent.ACTION_VIEW, uri);
-            Toast.makeText(this, "WhatsApp not Installed",
-                    Toast.LENGTH_SHORT).show();
-            startActivity(goToMarket);
-        }
-
-
-
-
-        /*   Intent sendIntent = new Intent();
-        sendIntent.setAction(Intent.ACTION_SEND);
-        sendIntent.putExtra(Intent.EXTRA_TEXT, "My message to send");
-        sendIntent.setType("text/plain");
-        sendIntent.setPackage("com.facebook.orca");
-
+    //method to get the right URL to use in the intent
+    public String getFacebookPageURL(Context context) {
+        PackageManager packageManager = context.getPackageManager();
         try {
-            startActivity(sendIntent);
-        } catch (android.content.ActivityNotFoundException ex) {
-         //   ToastHelper.show(this, "Please Install Facebook Messenger");
-
-        }*/
+            int versionCode = packageManager.getPackageInfo("com.facebook.katana", 0).versionCode;
+            if (versionCode >= 3002850) { //newer versions of fb app
+                return "fb://facewebmodal/f?href=" + FACEBOOK_URL;
+            } else { //older versions of fb app
+                return "fb://page/" + FACEBOOK_PAGE_ID;
+            }
+        } catch (PackageManager.NameNotFoundException e) {
+            return FACEBOOK_URL; //normal web url
+        }
     }
 
 
-   // It lets you open WhatsApp conversation screen for that specific user you are trying to communicate with:
+
+
+
+
+
+    private void openMessanger(){
+
+        Intent sendIntent = new Intent();
+        sendIntent.setAction(Intent.ACTION_SEND);
+        sendIntent
+                .putExtra(Intent.ACTION_SENDTO,
+                        "https://www.facebook.com/sallarahmed2");
+
+        sendIntent.setPackage("com.facebook.orca");
+        try {
+            startActivity(sendIntent);
+        }
+        catch (android.content.ActivityNotFoundException ex) {
+            Toast.makeText(this,"Please Install Facebook Messenger", Toast.LENGTH_LONG).show();
+        }
+
+    }
+
 
     private void openWhatsApp() {
         String smsNumber = "923133876798";
@@ -249,38 +253,6 @@ public class MainActivity extends AppCompatActivity
     }
 
 
-
-
-
-
-
-
-
-
-/*
-    private void openWhatsApp() {
-        String smsNumber = "00923133876789"; //without '+'
-        Intent sendIntent = null;
-        try {
-
-                sendIntent = new Intent(Intent.ACTION_SEND);
-                sendIntent.setType("text/plain");
-                sendIntent.putExtra(Intent.EXTRA_TEXT, "This is my text to send.");
-                sendIntent.putExtra("jid", smsNumber + "@s.whatsapp.net"); //phone number without "+" prefix
-                sendIntent.setPackage("com.whatsapp");
-
-                startActivity(sendIntent);
-
-        } catch(Exception e) {
-
-            if (sendIntent.resolveActivity(this.getPackageManager()) == null) {
-                Toast.makeText(this, "Error/n" + e.toString(), Toast.LENGTH_SHORT).show();
-                return;
-            }
-
-            Toast.makeText(this, "Error\n" + e.toString(), Toast.LENGTH_SHORT).show();
-        }
-    }*/
 
 
     //closes FAB submenus
