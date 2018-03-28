@@ -1,5 +1,6 @@
 package com.mediaproductionart.mediaproductionart;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -24,6 +25,7 @@ import android.provider.MediaStore;
 import android.support.annotation.RequiresApi;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.telephony.PhoneNumberUtils;
@@ -80,6 +82,7 @@ public class MainActivity extends AppCompatActivity
     private LinearLayout layoutFabWhatsapp;
     private LinearLayout layoutFabMessanger;
     private DrawerLayout drawer;
+    private String TAG = "MainActivity";
 
    // Uri obj "sallar";
     private static final String BACK_STACK_ROOT_TAG = "root_fragment";
@@ -105,7 +108,10 @@ public class MainActivity extends AppCompatActivity
 
         layoutFabMessanger =  this.findViewById(R.id.layoutFabMessanger);
         layoutFabWhatsapp =  this.findViewById(R.id.layoutFabWhatsApp);
-
+        if (!isStoragePermissionGranted()){
+            int REQUEST_CODE =1;
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, REQUEST_CODE);
+        }
 
 
         fabChat.setOnClickListener(new View.OnClickListener() {
@@ -140,6 +146,14 @@ public class MainActivity extends AppCompatActivity
 
         //Only main FAB is visible in the beginning
         closeSubMenusFab();
+
+
+
+
+
+
+
+
 
 
 
@@ -178,6 +192,26 @@ public class MainActivity extends AppCompatActivity
 
     }
 
+
+
+    public  boolean isStoragePermissionGranted() {
+        if (Build.VERSION.SDK_INT >= 23) {
+            if (checkSelfPermission(android.Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                    == PackageManager.PERMISSION_GRANTED) {
+                Log.v(TAG,"Permission is granted");
+                return true;
+            } else {
+
+                Log.v(TAG,"Permission is revoked");
+                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
+                return false;
+            }
+        }
+        else { //permission is automatically granted on sdk<23 upon installation
+            Log.v(TAG,"Permission is granted");
+            return true;
+        }
+    }
 
 
 
@@ -412,69 +446,26 @@ public class MainActivity extends AppCompatActivity
 
     }
 
-    public static class RealPathUtils {
-
-        @SuppressLint("NewApi")
-        public static String getRealPathFromURI_API19(Context context, Uri uri){
-            String filePath = "";
-            String wholeID = DocumentsContract.getDocumentId(uri);
-
-            // Split at colon, use second item in the array
-            String id = wholeID.split(":")[1];
-
-            String[] column = { MediaStore.Images.Media.DATA };
-
-            // where id is equal to
-            String sel = MediaStore.Images.Media._ID + "=?";
-
-            Cursor cursor = context.getContentResolver().query(MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
-                    column, sel, new String[]{ id }, null);
-
-            int columnIndex = cursor.getColumnIndex(column[0]);
-
-            if (cursor.moveToFirst()) {
-                filePath = cursor.getString(columnIndex);
-            }
-            cursor.close();
-            return filePath;
-        }
-
-
-        @SuppressLint("NewApi")
-        public static String getRealPathFromURI_API11to18(Context context, Uri contentUri) {
-            String[] proj = { MediaStore.Images.Media.DATA };
-            String result = null;
-
-            CursorLoader cursorLoader = new CursorLoader(
-                    context,
-                    contentUri, proj, null, null, null);
-            Cursor cursor = cursorLoader.loadInBackground();
-
-            if(cursor != null){
-                int column_index =
-                        cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
-                cursor.moveToFirst();
-                result = cursor.getString(column_index);
-            }
-            return result;
-        }
-
-        public static String getRealPathFromURI_BelowAPI11(Context context, Uri contentUri){
-            String[] proj = { MediaStore.Images.Media.DATA };
-            Cursor cursor = context.getContentResolver().query(contentUri, proj, null, null, null);
-            int column_index
-                    = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
-            cursor.moveToFirst();
-            return cursor.getString(column_index);
-        }
-    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == Activity.RESULT_OK) {
+
+            if (!isStoragePermissionGranted()){
+                int REQUEST_CODE =1;
+                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, REQUEST_CODE);
+            }
+
             Uri uri = data.getData();
-            String uriString = uri.toString();
+            assert uri != null;
+            String path = uri.getPath();
+            try {
+                Toast.makeText(this, encodeFileToBase64Binary(path), Toast.LENGTH_SHORT).show();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+           /* String uriString = uri.toString();
             File myFile = new File(uriString);
             String path = myFile.getAbsolutePath();
             String encodedText = null;
@@ -482,12 +473,13 @@ public class MainActivity extends AppCompatActivity
                encodedText = encodeFileToBase64Binary(path);
                 Log.e("TAG", "Encoded Text :"+encodedText );
                 Log.e("TAG", "Path :"+path);
+                Toast.makeText(this, encodedText, Toast.LENGTH_SHORT).show();
             } catch (IOException e) {
                 e.printStackTrace();
             }
 
             Log.e("TAG", "Outside Encoded Text :"+encodedText );
-            Log.e("TAG", "Outside Path :"+path);
+            Log.e("TAG", "Outside Path :"+path);*/
         }
     }
 
@@ -496,8 +488,8 @@ public class MainActivity extends AppCompatActivity
 
         File file = new File(fileName);
         byte[] bytes = loadFile(file);
-        String encoded = Base64.encodeToString(bytes,1);
-        String encodedString = new String(encoded);
+        String encoded = Base64.encodeToString(bytes,Base64.DEFAULT);
+      //  String encodedString = new String(encoded);
 
         return encoded;
     }
@@ -734,7 +726,8 @@ public class MainActivity extends AppCompatActivity
                 break;
 
             case R.id.btnSubmitCarrier:
-                Toast.makeText(this, "natho submit kayan cha kandy", Toast.LENGTH_SHORT).show();
+
+                //Toast.makeText(this, "natho submit kayan cha kandy", Toast.LENGTH_SHORT).show();
                 break;
 
 
@@ -756,4 +749,13 @@ public class MainActivity extends AppCompatActivity
         }
 
     }
+
+
+
+
+
+
+
+
+
 }
