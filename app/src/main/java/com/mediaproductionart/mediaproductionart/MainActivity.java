@@ -18,6 +18,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.DocumentsContract;
@@ -59,10 +60,13 @@ import com.mediaproductionart.mediaproductionart.services.SocialMediaFragment;
 import com.mediaproductionart.mediaproductionart.services.WebDesigningFragment;
 import com.mediaproductionart.mediaproductionart.services.WebDevelopmentFragment;
 
+import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
 import pl.droidsonroids.gif.GifImageView;
 
@@ -83,6 +87,8 @@ public class MainActivity extends AppCompatActivity
     private LinearLayout layoutFabMessanger;
     private DrawerLayout drawer;
     private String TAG = "MainActivity";
+    Context ctx;
+    String path;
 
    // Uri obj "sallar";
     private static final String BACK_STACK_ROOT_TAG = "root_fragment";
@@ -103,6 +109,7 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        ctx = this;
 
         fabChat =  findViewById(R.id.fabChat);
 
@@ -459,9 +466,10 @@ public class MainActivity extends AppCompatActivity
 
             Uri uri = data.getData();
             assert uri != null;
-            String path = uri.getPath();
+            path = uri.getPath();
             try {
-                Toast.makeText(this, encodeFileToBase64Binary(path), Toast.LENGTH_SHORT).show();
+              //  Toast.makeText(this, encodeFileToBase64Binary(path), Toast.LENGTH_SHORT).show();
+                encodeFileToBase64Binary(path);
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -726,7 +734,7 @@ public class MainActivity extends AppCompatActivity
                 break;
 
             case R.id.btnSubmitCarrier:
-
+                new UploadFileAsync().execute("");
                 //Toast.makeText(this, "natho submit kayan cha kandy", Toast.LENGTH_SHORT).show();
                 break;
 
@@ -753,9 +761,137 @@ public class MainActivity extends AppCompatActivity
 
 
 
+    private class UploadFileAsync extends AsyncTask<String, Void, String> {
+
+        @Override
+        protected String doInBackground(String... params) {
+
+            try {
+                String sourceFileUri = path;
+
+                HttpURLConnection conn = null;
+                DataOutputStream dos = null;
+                String lineEnd = "\r\n";
+                String twoHyphens = "--";
+                String boundary = "*****";
+                int serverResponseCode = 1;
+                int bytesRead, bytesAvailable, bufferSize;
+                byte[] buffer;
+                int maxBufferSize = 1 * 1024 * 1024;
+                File sourceFile = new File(sourceFileUri);
+
+                if (sourceFile.isFile()) {
+
+                    try {
+                        String upLoadServerUri = "https://mediaproductionart.000webhostapp.com/upload_file.php/";
+
+                        // open a URL connection to the Servlet
+                        FileInputStream fileInputStream = new FileInputStream(
+                                sourceFile);
+                        URL url = new URL(upLoadServerUri);
+
+                        // Open a HTTP connection to the URL
+                        conn = (HttpURLConnection) url.openConnection();
+                        conn.setDoInput(true); // Allow Inputs
+                        conn.setDoOutput(true); // Allow Outputs
+                        conn.setUseCaches(false); // Don't use a Cached Copy
+                        conn.setRequestMethod("POST");
+                        conn.setRequestProperty("Connection", "Keep-Alive");
+                        conn.setRequestProperty("ENCTYPE",
+                                "multipart/form-data");
+                        conn.setRequestProperty("Content-Type",
+                                "multipart/form-data;boundary=" + boundary);
+                        conn.setRequestProperty("bill", sourceFileUri);
+
+                        dos = new DataOutputStream(conn.getOutputStream());
+
+                        dos.writeBytes(twoHyphens + boundary + lineEnd);
+                        dos.writeBytes("Content-Disposition: form-data; name=\"bill\";filename=\""
+                                + sourceFileUri + "\"" + lineEnd);
+
+                        dos.writeBytes(lineEnd);
+
+                        // create a buffer of maximum size
+                        bytesAvailable = fileInputStream.available();
+
+                        bufferSize = Math.min(bytesAvailable, maxBufferSize);
+                        buffer = new byte[bufferSize];
+
+                        // read file and write it into form...
+                        bytesRead = fileInputStream.read(buffer, 0, bufferSize);
+
+                        while (bytesRead > 0) {
+
+                            dos.write(buffer, 0, bufferSize);
+                            bytesAvailable = fileInputStream.available();
+                            bufferSize = Math
+                                    .min(bytesAvailable, maxBufferSize);
+                            bytesRead = fileInputStream.read(buffer, 0,
+                                    bufferSize);
+
+                        }
+
+                        // send multipart form data necesssary after file
+                        // data...
+                        dos.writeBytes(lineEnd);
+                        dos.writeBytes(twoHyphens + boundary + twoHyphens
+                                + lineEnd);
+
+                        // Responses from the server (code and message)
+                        serverResponseCode = conn.getResponseCode();
+                        String serverResponseMessage = conn
+                                .getResponseMessage();
+
+                        if (serverResponseCode == 200) {
+
+                            // messageText.setText(msg);
+//                            Toast.makeText(ctx, "File Upload Complete.",
+  //                               Toast.LENGTH_SHORT).show();
+
+                            // recursiveDelete(mDirectory1);
+
+                        }
+
+                        // close the streams //
+                        fileInputStream.close();
+                        dos.flush();
+                        dos.close();
+
+                    } catch (Exception e) {
+
+                        // dialog.dismiss();
+                        e.printStackTrace();
+
+                    }
+                    // dialog.dismiss();
+
+                } // End else block
 
 
+            } catch (Exception ex) {
+                // dialog.dismiss();
+
+                ex.printStackTrace();
+            }
+            return "Executed";
+        }
+
+        @Override
+        protected void onPostExecute(String result) {
+
+        }
+
+        @Override
+        protected void onPreExecute() {
+        }
+
+        @Override
+        protected void onProgressUpdate(Void... values) {
+        }
+    }
 
 
 
 }
+
+
