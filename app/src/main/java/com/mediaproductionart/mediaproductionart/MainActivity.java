@@ -60,11 +60,14 @@ import com.mediaproductionart.mediaproductionart.services.SocialMediaFragment;
 import com.mediaproductionart.mediaproductionart.services.WebDesigningFragment;
 import com.mediaproductionart.mediaproductionart.services.WebDevelopmentFragment;
 
+import java.io.BufferedWriter;
 import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
@@ -761,6 +764,7 @@ public class MainActivity extends AppCompatActivity
 
 
 
+    @SuppressLint("StaticFieldLeak")
     private class UploadFileAsync extends AsyncTask<String, Void, String> {
 
         @Override
@@ -811,6 +815,28 @@ public class MainActivity extends AppCompatActivity
 
                         dos.writeBytes(lineEnd);
 
+
+
+
+                        // Append parameters to URL
+                        Uri.Builder builder = new Uri.Builder()
+                                .appendQueryParameter("username", params[0])
+                                .appendQueryParameter("password", params[1]);
+                        String query = builder.build().getEncodedQuery();
+
+
+
+                        // Open connection for sending data
+                        OutputStream os = conn.getOutputStream();
+                        BufferedWriter writer = new BufferedWriter(
+                                new OutputStreamWriter(os, "UTF-8"));
+                        writer.write(query);
+                        writer.flush();
+                        writer.close();
+                        os.close();
+                        conn.connect();
+
+
                         // create a buffer of maximum size
                         bytesAvailable = fileInputStream.available();
 
@@ -837,19 +863,18 @@ public class MainActivity extends AppCompatActivity
                         dos.writeBytes(twoHyphens + boundary + twoHyphens
                                 + lineEnd);
 
+
+
                         // Responses from the server (code and message)
                         serverResponseCode = conn.getResponseCode();
                         String serverResponseMessage = conn
                                 .getResponseMessage();
 
                         if (serverResponseCode == 200) {
-
-                            // messageText.setText(msg);
-//                            Toast.makeText(ctx, "File Upload Complete.",
-  //                               Toast.LENGTH_SHORT).show();
-
-                            // recursiveDelete(mDirectory1);
-
+                           /*  messageText.setText(msg);
+                            Toast.makeText(ctx, "File Upload Complete.",
+                                Toast.LENGTH_SHORT).show();
+                            recursiveDelete(mDirectory1);*/
                         }
 
                         // close the streams //
